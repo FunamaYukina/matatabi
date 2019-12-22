@@ -6,5 +6,26 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"
   body
+    header
+      nav.navbar.navbar-expand-lg.navbar-light
+        .nav-left
+          a.navbar-brand href="/top"
+            / =image_tag
+            span またたび
+        .nav-right
+          .navbar-nav
+            .nav-item.nav-link
+              a ログアウト
+            .nav-item.nav-link
+              a マイページ
+            .nav-item.nav-link
+              a アカウント編集
+            .nav-item.nav-link
+              a ログイン
+            .nav-item.nav-link
+              a 新規登録
+      - flash.each do |message_type, message|
+        div class=("alert alert-#{message_type}") = message
     = yield
