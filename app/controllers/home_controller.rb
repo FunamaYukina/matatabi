@@ -1,8 +1,10 @@
 class HomeController < ApplicationController
+  layout "top", only: :top
+
+  def top
+  end
 
   def index
   end
 
-  def top
-  end
 end
