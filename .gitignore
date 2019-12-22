@@ -17,3 +17,12 @@
 /yarn-error.log
 
 .byebug_history
+.history/
+lib/
+/log/*
+/tmp/*
+.env
+/.bundle
+/vendor/bundle
+/public/assets
+.idea/
