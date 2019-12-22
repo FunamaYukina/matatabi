@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HomeController < ApplicationController
   layout "top", only: :top
 
@@ -6,5 +8,4 @@ class HomeController < ApplicationController
 
   def index
   end
-
 end

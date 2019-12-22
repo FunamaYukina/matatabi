@@ -6,7 +6,7 @@ AllCops:
     - "vendor/**/*" # rubocop config/default.yml
     - "db/schema.rb"
     - "bin/*"
-    - "app/controllers/profiles/*"
+    - "config/**/*"
   DisplayCopNames: true
 
 ##################### Style ##################################
@@ -93,11 +93,6 @@ Style/HashSyntax:
 Style/IfUnlessModifier:
   Enabled: false
 
-# ({ と hash を開始した場合に ( の位置にインデントさせる
-# そもそも {} が必要ない可能性が高いが Style/BracesAroundHashParameters はチェックしないことにしたので
-Style/IndentHash:
-  EnforcedStyle: consistent
-
 # private/protected は一段深くインデントする
 Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
@@ -157,9 +152,6 @@ Style/StringLiteralsInInterpolation:
 
 # いくらなんでも inject { |a, e| } は短すぎるので分かりやすい名前をつけたい
 Style/SingleLineBlockParams:
-  Enabled: false
-
-Style/SimbolArray:
   Enabled: false
 
 Style/EmptyMethod:
