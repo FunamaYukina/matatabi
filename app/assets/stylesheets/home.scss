@@ -24,7 +24,7 @@
       padding-top: 10px;
       border-radius: 10px;
       width: 180px;
-      height: 50px;
+      height: 40px;
       margin-left: auto;
       margin-right: auto;
       display: block;
@@ -34,6 +34,44 @@
         text-decoration: none;
         color: #fff;
       }
+    }
+  }
+}
+
+// index
+
+.index-container{
+  .index-contents{
+    padding-top: 80px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    p{
+      text-align: center;
+    }
+    .index-center{
+      padding-top: 30px;
+      .region-contents{
+        text-align: center;
+        .region-top,.region-center,.region-bottom{
+          button{
+            background: #008800;
+            color: white;
+            font-size: 19px;
+            cursor: pointer;
+            padding-top: 6px;
+            border-radius: 10px;
+            width: 140px;
+            height: 50px;
+            display: inline-block;
+            text-align: center;
+            margin:5px;
+          }
+        }
+      }
+    }
+    .index-bottom{
+      padding-top: 30px;
     }
   }
 }
