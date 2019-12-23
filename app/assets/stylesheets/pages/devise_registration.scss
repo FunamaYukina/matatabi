@@ -1,0 +1,56 @@
+// 新規登録　new,ログイン,編集
+
+.new_container {
+  width: 370px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  background-color: #E6FFE9;
+  text-align: center;
+  border: 1px solid #CCC;
+
+  .container_top {
+    p {
+      padding-top: 20px;
+      font-size: 20px;
+    }
+  }
+
+  .container_center {
+    .field {
+      padding-top: 10px;
+
+      p {
+        margin-bottom: 5px;
+      }
+      .title{
+        margin-bottom: 0;
+      }
+      .memo{
+        font-size: 14px;
+      }
+    }
+
+    .label {
+      padding-right: 5px;
+    }
+
+    .actions {
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      .submit-btn {
+        background-color: #228B22;
+        width: 150px;
+        color: white;
+      }
+    }
+  }
+
+  .container_bottom {
+    margin-bottom: 20px;
+    a {
+      text-decoration: none;
+    }
+  }
+}
