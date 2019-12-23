@@ -26,5 +26,7 @@ module MatatabiApp
     end
 
     config.generators.template_engine = :slim
+    I18n.enforce_available_locales = true
+    config.i18n.default_locale = :ja
   end
 end

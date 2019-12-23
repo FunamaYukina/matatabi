@@ -35,6 +35,8 @@ gem "jbuilder", "~> 2.5"
 # gem 'capistrano-rails', group: :development
 
 gem "devise"
+gem "devise-i18n"
+gem "devise-i18n-views"
 gem "slim-rails"
 
 group :development, :test do
