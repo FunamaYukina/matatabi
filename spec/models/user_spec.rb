@@ -3,7 +3,6 @@
 require "rails_helper"
 
 RSpec.describe User, type: :model do
-
   describe FactoryBot do
     it "有効なファクトリを持つこと" do
       expect(build(:user)).to be_valid
