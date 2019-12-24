@@ -13,6 +13,4 @@ ADD Gemfile /matatabi_app/Gemfile
 ADD Gemfile.lock /matatabi_app/Gemfile.lock
 
 RUN gem install bundler
-RUN gem install rails
 RUN bundle install
-ADD . /matatabi_app

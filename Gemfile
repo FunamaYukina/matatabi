@@ -47,6 +47,9 @@ group :development, :test do
   gem "rubocop"
   gem "rubocop-rspec"
   gem "selenium-webdriver"
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
 end
 
 group :test do
