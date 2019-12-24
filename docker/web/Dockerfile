@@ -14,4 +14,3 @@ ADD Gemfile.lock /matatabi_app/Gemfile.lock
 
 RUN gem install bundler
 RUN bundle install
-ADD . /matatabi_app
