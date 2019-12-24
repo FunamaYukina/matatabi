@@ -10,7 +10,7 @@ RUN mkdir /matatabi_app
 WORKDIR /matatabi_app
 
 ADD Gemfile /matatabi_app/Gemfile
-#ADD Gemfile.lock /matatabi_app/Gemfile.lock
+ADD Gemfile.lock /matatabi_app/Gemfile.lock
 
 RUN gem install bundler
 RUN bundle install
