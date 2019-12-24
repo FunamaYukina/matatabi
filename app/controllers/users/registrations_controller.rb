@@ -10,9 +10,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    @user = User.last
+    if sign_up_params[:user_type] == "true"
+      @traveler = @user.build_traveler
+      @traveler.save
+    elsif sign_up_params[:user_type]=="false"
+      @advisor = @user.build_advisor
+      @advisor.save
+    else
+      @traveler = @user.build_traveler
+      @traveler.save
+    end
+  end
 
   # GET /resource/edit
   # def edit
