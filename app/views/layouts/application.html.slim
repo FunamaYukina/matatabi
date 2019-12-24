@@ -16,16 +16,18 @@ html
             span またたび
         .nav-right
           .navbar-nav
-            .nav-item.nav-link
-              = link_to "ログアウト", destroy_user_session_path, method: :delete
-            .nav-item.nav-link
-              a マイページ
-            .nav-item.nav-link
-              a アカウント編集
-            .nav-item.nav-link
-              = link_to "ログイン", new_user_session_path
-            .nav-item.nav-link
-              = link_to "新規登録", new_user_registration_path
+            - if user_signed_in?
+              .nav-item.nav-link
+                = link_to "ログアウト", destroy_user_session_path, method: :delete
+              .nav-item.nav-link
+                a マイページ
+              .nav-item.nav-link
+                a アカウント編集
+            - else
+              .nav-item.nav-link
+                = link_to "ログイン", new_user_session_path
+              .nav-item.nav-link
+                = link_to "新規登録", new_user_registration_path
       - flash.each do |message_type, message|
         div class=("alert alert-#{message_type}") = message
     = yield
