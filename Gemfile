@@ -44,12 +44,12 @@ group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", ">= 2.15"
+  gem "pry-byebug"
+  gem "pry-doc"
+  gem "pry-rails"
   gem "rubocop"
   gem "rubocop-rspec"
   gem "selenium-webdriver"
-  gem 'pry-rails'
-  gem 'pry-byebug'
-  gem 'pry-doc'
 end
 
 group :test do
