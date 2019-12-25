@@ -12,15 +12,15 @@
 
 ActiveRecord::Schema.define(version: 20191225113836) do
 
-  create_table "advisors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "user_id"
+  create_table "advisors", force: :cascade do |t|
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_advisors_on_user_id"
   end
 
-  create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "user_id"
+  create_table "profiles", force: :cascade do |t|
+    t.integer "user_id"
     t.string "image_file"
     t.string "introduction_title"
     t.text "introduction"
@@ -30,14 +30,14 @@ ActiveRecord::Schema.define(version: 20191225113836) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "travelers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "user_id"
+  create_table "travelers", force: :cascade do |t|
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_travelers_on_user_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -51,7 +51,4 @@ ActiveRecord::Schema.define(version: 20191225113836) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "advisors", "users"
-  add_foreign_key "profiles", "users"
-  add_foreign_key "travelers", "users"
 end
