@@ -1,1 +1,42 @@
-p this is show page
+.user_container
+  .container_top
+    .top_left
+      = image_tag 'noimage.png', :size => '120x120', :class => 'top_icon'
+    .top_center
+      = @user.name
+    .top_right
+      - if current_user == @user
+        = link_to "プロフィールを編集する", edit_user_profile_path, class: 'edit-btn'
+  .center_profile_title
+    - unless @user.profile.introduction_title.nil?
+      .title
+        = @user.profile.introduction_title
+  .container_center
+    .center_profile
+      span プロフィール
+      br
+        .profile
+          = @user.profile.introduction
+    .center_place
+      span 紹介できるところ
+      br
+        .place
+          = @user.profile.place
+.review_container
+  p レビュー6件
+  .review_post
+    .post_left
+      = image_tag 'noimage.png', :size => '50x50', :class => 'review_icon'
+    .post_right
+      .right_name
+        p ゆきな
+      .right_detail
+        p 大変勉強になりました。大変勉強になりました。大変勉強になりました。大変勉強になりました。
+  .review_post
+    .post_left
+      = image_tag 'noimage.png', :size => '50x50', :class => 'review_icon'
+    .post_right
+      .right_name
+        p ゆきな
+      .right_detail
+        p 大変勉強になりました。大変勉強になりました。大変勉強になりました。大変勉強になりました。

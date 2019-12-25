@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @user=User.find_by(name: params[:user_name])
   end
 
   def update
