@@ -10,4 +10,8 @@ class User < ApplicationRecord
   has_one :traveler, dependent: :destroy
   accepts_nested_attributes_for :advisor
   accepts_nested_attributes_for :traveler
+
+  has_one :profile, dependent: :destroy
+  after_create :create_profile
+
 end
