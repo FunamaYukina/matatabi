@@ -1,0 +1,19 @@
+.plan_container
+  .container_bottom
+    - if current_user.advisor
+      .bottom_plan
+        .bottom_left
+          span 相談プラン
+        .bottom_right
+          = link_to "+新しくプランを作成", new_user_plan_path, class: 'new-btn'
+      - if current_user.advisor.plans
+        - current_user.advisor.plans.each do |plan|
+          .plan_box
+            .title
+              = "「" +plan.title + "」"
+            .description
+              = plan.description
+            .fee
+              = "１回 " +plan.fee.to_s + " 円"
+            .edit
+              = link_to "このプランの編集", edit_user_plan_path(id: plan.id), class: 'edit-btn'

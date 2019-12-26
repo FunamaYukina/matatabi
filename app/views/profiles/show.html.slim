@@ -22,6 +22,12 @@
       br
         .place
           = @user.profile.place
+- if @user.advisor
+  - if @user.advisor.plans
+    - if @user == current_user
+      = render partial: 'shared/plans/my_plans'
+    - else
+      = render partial: 'shared/plans/user_plans'
 .review_container
   p レビュー6件
   .review_post
