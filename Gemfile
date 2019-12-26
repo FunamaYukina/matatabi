@@ -34,13 +34,13 @@ gem "jbuilder", "~> 2.5"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem "carrierwave"
 gem "devise"
 gem "devise-i18n"
 gem "devise-i18n-views"
-gem "slim-rails"
-gem "carrierwave"
-gem "mini_magick"
 gem "jquery-rails", "~> 4.3", ">= 4.3.1"
+gem "mini_magick"
+gem "slim-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

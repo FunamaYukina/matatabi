@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 class ProfilesController < ApplicationController
-  before_action  :authenticate_user!
+  before_action :authenticate_user!
 
   def edit
   end
 
   def show
-    @user=User.find_by(name: params[:user_name])
+    @user = User.find_by(name: params[:user_name])
   end
 
   def update
@@ -20,7 +22,7 @@ class ProfilesController < ApplicationController
 
   private
 
-  def profile_params
-    params.require(:profile).permit(:introduction_title, :introduction, :place,:image_file)
-  end
+    def profile_params
+      params.require(:profile).permit(:introduction_title, :introduction, :place, :image_file)
+    end
 end

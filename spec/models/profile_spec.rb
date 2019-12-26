@@ -1,7 +1,8 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe Profile, type: :model do
-
   describe "validation" do
     context "プロフィールの編集に成功する場合" do
       it "PNG画像を追加した場合、投稿に成功すること" do
