@@ -1,13 +1,13 @@
 .plan_container
   .container_bottom
-    .bottom_right
-      - @user.advisor.plans.each do |plan|
-        .bottom_plan
-          .plan_box
-            .title
-              = "「" +plan.title + "」"
-            .description
-              = plan.description
-            .fee
-              = "１回 " +plan.fee.to_s + " 円"
-            = link_to "相談する", top_path, class: 'submit-btn'
+    span 相談プラン
+    - @user.advisor.plans.each do |plan|
+      .bottom_plan
+        .plan_box
+          .title
+            = "「" +plan.title + "」"
+          .description
+            = plan.description
+          .fee
+            = "１回 " +plan.fee.to_s + " 円"
+          = link_to "相談する", top_path, class: 'submit-btn'
