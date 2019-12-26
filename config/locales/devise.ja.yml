@@ -39,6 +39,12 @@ ja:
             introduction_title:
             introduction:
               too_long: "は%{count}文字以下に設定して下さい。"
+        plan:
+          attributes:
+            title:
+              too_long: "は%{count}文字以下に設定して下さい。"
+            description:
+              too_long: "は%{count}文字以下に設定して下さい。"
     attributes:
       user:
         current_password: "現在のパスワード"
@@ -51,6 +57,9 @@ ja:
         image_file: "画像"
         introduction_title: "自己紹介タイトル"
         introduction: "自己紹介文"
+      plan:
+        title: "タイトル"
+        description: "プラン詳細"
     models:
       user: "ユーザ"
   devise:
