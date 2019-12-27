@@ -16,4 +16,10 @@ FactoryBot.define do
     password_confirmation { "test_another_password" }
     user_type { true }
   end
+
+  # trait :with_advisor do
+  #   after(:create) do |user|
+  #     user.advisor.create(attributes_for(:advisor))
+  #   end
+  # end
 end
