@@ -1,0 +1,39 @@
+// top
+
+.top {
+  background-image: url("top.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  .top_container {
+    padding-top: 250px;
+    padding-bottom: 200px;
+
+    .top_header {
+      color: white;
+      font-size: 30px;
+      padding-bottom: 50px;
+    }
+
+    .top_button {
+      background: mediumseagreen;
+      font-size: 19px;
+      cursor: pointer;
+      padding-top: 10px;
+      border-radius: 10px;
+      width: 180px;
+      height: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+}

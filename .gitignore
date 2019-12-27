@@ -25,4 +25,5 @@ lib/
 /.bundle
 /vendor/bundle
 /public/assets
+/public/uploads
 .idea/
