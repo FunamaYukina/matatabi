@@ -1,4 +1,4 @@
-FROM ruby:2.6
+FROM ruby:2.6.5
 ENV LANG C.UTF-8
 
 RUN apt-get update -qq
@@ -13,6 +13,4 @@ ADD Gemfile /matatabi_app/Gemfile
 ADD Gemfile.lock /matatabi_app/Gemfile.lock
 
 RUN gem install bundler
-RUN gem install rails
 RUN bundle install
-ADD . /matatabi_app
