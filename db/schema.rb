@@ -11,11 +11,10 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20191222162557) do
-
   create_table "devise", force: :cascade do |t|
     t.string "name", null: false
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
+    t.string "email", null: false
+    t.string "encrypted_password", null: false
     t.boolean "user_type", default: true, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -25,5 +24,4 @@ ActiveRecord::Schema.define(version: 20191222162557) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
 end
