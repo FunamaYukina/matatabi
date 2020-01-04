@@ -32,7 +32,6 @@ RSpec.describe User, type: :request do
     context "未ログインの場合" do
       it "レスポンス200が返ってくること" do
         get new_user_session_path
-        expect(response).to be_success
         expect(response).to have_http_status(:ok)
       end
 
