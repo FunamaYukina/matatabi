@@ -27,3 +27,10 @@ lib/
 /public/assets
 /public/uploads
 .idea/
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

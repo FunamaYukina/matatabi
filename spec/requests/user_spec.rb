@@ -36,12 +36,15 @@ RSpec.describe User, type: :request do
       end
 
       it "ユーザーが存在する場合、ログイン出来ること" do
-        user.save
         post user_session_path, params: {
           email: user.email,
           password: user.password
         }
-        # request specでのログインテストの書き方 未完成(わからない)
+        binding.pry
+        # expect(flash[:notice]).to be nil
+        # expect(response).to redirect_to top_path
+        expect(response).to have_http_status(200)
+        expect(flash[:alert]).to include "メールアドレスまたはパスワードが違います。"
       end
 
       it "ユーザーが存在しない場合、ログインできないこと" do
