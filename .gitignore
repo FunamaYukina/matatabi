@@ -26,4 +26,6 @@ lib/
 /vendor/bundle
 /public/assets
 /public/uploads
+/public/packs/
+/public/packs-test/
 .idea/
