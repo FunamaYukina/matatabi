@@ -21,7 +21,6 @@ RSpec.describe Profile, type: :request do
 
       it "レスポンス200が返ってくること" do
         get user_profile_path(user_name: user.name)
-        expect(response).to be_success
         expect(response).to have_http_status(:ok)
       end
     end
@@ -43,7 +42,6 @@ RSpec.describe Profile, type: :request do
 
       it "レスポンス200が返ってくること" do
         get edit_user_profile_path(user_name: user.name)
-        expect(response).to be_success
         expect(response).to have_http_status(:ok)
       end
     end

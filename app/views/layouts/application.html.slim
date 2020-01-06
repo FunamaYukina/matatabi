@@ -4,9 +4,12 @@ html
     title
       | MatatabiApp
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"
+
+    / = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag "application", media: "all", "data-turbolinks-track": "reload"
+  / = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    / link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"
   body
     header
       nav.navbar.navbar-expand-lg.navbar-light
@@ -29,5 +32,5 @@ html
               .nav-item.nav-link
                 = link_to "新規登録", new_user_registration_path
       - flash.each do |message_type, message|
-        div class=("alert alert-#{message_type}") = message
+        div class=("alert alert-#{bootstrap_class_for(message_type)}") = message
     = yield
