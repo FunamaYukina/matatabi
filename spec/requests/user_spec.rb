@@ -51,6 +51,7 @@ RSpec.describe User, type: :request do
         }
         expect(flash[:notice]).to be nil
         expect(flash[:alert]).to include "メールアドレスまたはパスワードが違います。"
+        expect(response).to have_http_status(:ok)
       end
     end
 
