@@ -43,7 +43,7 @@ RSpec.describe User, type: :request do
         binding.pry
         # expect(flash[:notice]).to be nil
         # expect(response).to redirect_to top_path
-        expect(response).to have_http_status(200)
+        expect(response).to have_http_status(:ok)
         expect(flash[:alert]).to include "メールアドレスまたはパスワードが違います。"
       end
 
