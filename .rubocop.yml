@@ -7,6 +7,7 @@ AllCops:
     - "db/schema.rb"
     - "bin/*"
     - "config/**/*"
+    - "app/controllers/users/*"
   DisplayCopNames: true
 
 ##################### Style ##################################

@@ -1,0 +1,32 @@
+.new_container
+  .container_top
+    p 新規登録
+  .container_center
+    = form_with model:@user, url:user_registration_path, local: true do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .field
+        p ユーザーネーム
+        = f.text_field :name
+      .field
+        p メールアドレス
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .field
+        p パスワード(6文字以上)
+        = f.password_field :password, autocomplete: "new-password"
+      .field
+        p パスワード(確認用)
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+      .field
+        p.title 初めはどちらとして登録しますか？
+        p.memo  （あとで変更できます）
+        label
+          = f.radio_button :user_type,true, :checked => true, :value => true
+          |アドバイスしてもらう
+        br
+        label
+          = f.radio_button :user_type,false, :value => false
+          |アドバイザーになる
+      .actions
+        = f.submit "登録する", class: "submit-btn"
+  .container_bottom
+    = link_to "ログインする", new_user_session_path, class: 'post'
