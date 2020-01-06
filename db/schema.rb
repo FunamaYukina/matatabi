@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2019_12_26_140039) do
     t.string "name", null: false
     t.string "email", null: false
     t.string "encrypted_password", null: false
-    t.boolean "traveler", default: true, null: false
+    t.boolean "traveler_type", default: true
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

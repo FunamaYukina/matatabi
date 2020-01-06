@@ -13,10 +13,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     @user = User.last
-    if sign_up_params[:user_type] == "true"
+    if sign_up_params[:traveler_type] == "true"
       @traveler = @user.build_traveler
       @traveler.save
-    elsif sign_up_params[:user_type]=="false"
+    elsif sign_up_params[:traveler_type]=="false"
       @advisor = @user.build_advisor
       @advisor.save
     else
