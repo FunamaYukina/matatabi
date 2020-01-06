@@ -2,7 +2,7 @@
   .container_top
     p 新規登録
   .container_center
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = form_with model: @user, url: user_registration_path, local: true do |f|
       = render "devise/shared/error_messages", resource: resource
       .field
         p ユーザーネーム
@@ -20,11 +20,11 @@
         p.title 初めはどちらとして登録しますか？
         p.memo  （あとで変更できます）
         label
-          = f.radio_button :user_type,true, :checked => true, :value => true
+          = f.radio_button :user_type, true, :checked => true, :value => true
           |アドバイスしてもらう
         br
         label
-          = f.radio_button :user_type,false, :value => false
+          = f.radio_button :user_type, false, :value => false
           |アドバイザーになる
       .actions
         = f.submit "登録する", class: "submit-btn"

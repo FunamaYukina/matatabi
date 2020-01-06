@@ -25,14 +25,14 @@ RSpec.describe User, type: :model do
     context "新規ユーザーの登録に失敗する場合" do
       it "ユーザーネームが重複した場合、ユーザー登録に失敗すること" do
         create(:user)
-        existing_user = build(:another_user, name: "test_user_name")
+        existing_user = build(:traveler_user, name: "test_user_name")
         existing_user.valid?
         expect(existing_user.errors.full_messages).to include "ユーザーネーム は既に使用されています。"
       end
 
       it "emailが重複した場合、ユーザー登録に失敗すること" do
         create(:user)
-        existing_user = build(:another_user, email: "example@test.com")
+        existing_user = build(:traveler_user, email: "example@test.com")
         existing_user.valid?
         expect(existing_user.errors.full_messages).to include "メールアドレス は既に使用されています。"
       end

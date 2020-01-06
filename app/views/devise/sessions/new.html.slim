@@ -2,7 +2,7 @@
   .container_top
     p ログイン
   .container_center
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = form_with model: @user, url: user_session_path,local: true do |f|
       .field
         p メールアドレス
         = f.email_field :email, autofocus: true, autocomplete: "email"
