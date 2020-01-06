@@ -23,7 +23,6 @@ RSpec.describe Plan, type: :request do
 
       it "レスポンス200が返ってくること" do
         get new_user_plan_path(user_name: user.name)
-        expect(response).to be_success
         expect(response).to have_http_status(:ok)
       end
     end
@@ -47,7 +46,6 @@ RSpec.describe Plan, type: :request do
 
       it "レスポンス200が返ってくること" do
         get edit_user_plan_path(user_name: user.name, id: @plan.id)
-        expect(response).to be_success
         expect(response).to have_http_status(:ok)
       end
     end

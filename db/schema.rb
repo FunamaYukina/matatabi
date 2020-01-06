@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_113836) do
+ActiveRecord::Schema.define(version: 2019_12_26_140039) do
 
   create_table "advisors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2019_12_25_113836) do
     t.index ["user_id"], name: "index_advisors_on_user_id"
   end
 
-  create_table "plans", force: :cascade do |t|
-    t.integer "advisor_id"
+  create_table "plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "advisor_id"
     t.string "title"
     t.text "description"
     t.integer "fee"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_12_25_113836) do
   end
 
   add_foreign_key "advisors", "users"
+  add_foreign_key "plans", "advisors"
   add_foreign_key "profiles", "users"
   add_foreign_key "travelers", "users"
 end
