@@ -8,7 +8,7 @@ RSpec.describe User, type: :request do
   describe "registrations#new" do
     context "新規登録ユーザー登録に成功する場合" do
       it "新規ユーザーが登録されること" do
-        user_params = attributes_for(:another_user)
+        user_params = attributes_for(:traveler_user)
         post user_registration_path, params: { user: user_params }
         expect(response.status).to eq(302)
         expect(User.last.email).to eq user_params[:email]
@@ -20,7 +20,7 @@ RSpec.describe User, type: :request do
       it "TOPページへリダイレクトされること" do
         sign_in user
         expect do
-          user_params = attributes_for(:another_user)
+          user_params = attributes_for(:traveler_user)
           post user_registration_path, params: { user: user_params }
         end.not_to change(User, :count)
         expect(response).to redirect_to top_path

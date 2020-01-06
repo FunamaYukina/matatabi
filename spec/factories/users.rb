@@ -6,14 +6,14 @@ FactoryBot.define do
     name { "test_user_name" }
     password { "test_password" }
     password_confirmation { "test_password" }
-    user_type { false }
+    traveler { false }
   end
 
-  factory :another_user, class: "User" do
+  factory :traveler_user, class: "User" do
     email { "another_example@test.com" }
     name { "test_another_user_name" }
     password { "test_another_password" }
     password_confirmation { "test_another_password" }
-    user_type { true }
+    traveler { true }
   end
 end
