@@ -1,0 +1,29 @@
+.errror_container
+  - current_user.errors.full_messages.each do |message|
+    .form-error
+      = message
+
+.user_container
+  = form_for(current_user.profile, url: user_profile_path, html: {method: "patch"}) do |p|
+    .container_top
+      .top_left
+        = image_tag 'noimage.png', :size => '120x120', :class => 'top_icon'
+      .top_center
+        = current_user.name
+      .top_right
+        .center_profile_title
+          .title
+            span プロフィールタイトル
+            br
+            = p.text_field :introduction_title, class: "field",:placeholder=>"〇〇のことならおまかせ！"
+    .container_center
+      .center_profile
+        span プロフィール
+        br
+        = p.text_area :introduction, class: "textarea"
+      .center_place
+        span 紹介できるところ
+        br
+        = p.text_field :place, class: "field"
+      .center_submit
+        =p.submit "プロフィールを更新する", class: 'submit-btn'

@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {
       :registrations => 'users/registrations'
   }
+
+  resources :users, param: :name do
+    resource :profile, only: [:show, :edit, :update]
+  end
 end

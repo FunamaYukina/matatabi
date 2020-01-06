@@ -75,4 +75,11 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe "新規登録した場合" do
+    it "プロフィールも作られること" do
+      create(:user)
+      expect(Profile.last.user_id).to eq User.last.id
+    end
+  end
 end
