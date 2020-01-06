@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: {case_sensitive: true}
   has_one :advisor, dependent: :destroy
   has_one :traveler, dependent: :destroy
   accepts_nested_attributes_for :advisor
