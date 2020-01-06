@@ -40,7 +40,7 @@ RSpec.describe User, type: :request do
           email: user.email,
           password: user.password
         }
-        binding.pry
+        # binding.pry
         # expect(flash[:notice]).to be nil
         # expect(response).to redirect_to top_path
         expect(response).to have_http_status(:ok)
