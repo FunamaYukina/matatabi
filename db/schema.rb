@@ -13,14 +13,14 @@
 ActiveRecord::Schema.define(version: 2019_12_25_113836) do
 
   create_table "advisors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_advisors_on_user_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "image_file"
     t.string "introduction_title"
     t.text "introduction"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_12_25_113836) do
   end
 
   create_table "travelers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_travelers_on_user_id"
@@ -51,4 +51,7 @@ ActiveRecord::Schema.define(version: 2019_12_25_113836) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "advisors", "users"
+  add_foreign_key "profiles", "users"
+  add_foreign_key "travelers", "users"
 end

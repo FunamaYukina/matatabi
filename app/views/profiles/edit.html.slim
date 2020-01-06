@@ -7,7 +7,10 @@
   = form_for(current_user.profile, url: user_profile_path, html: {method: "patch"}) do |p|
     .container_top
       .top_left
-        = image_tag 'noimage.png', :size => '120x120', :class => 'top_icon'
+        = image_tag current_user.profile.image_file, :size => '120x120', :class => 'top_icon',id: :icon_file_first
+        #icon_image
+        = p.label :image_file, "画像をアップロード", class: "image_input_btn",for: "icon_file"
+        = p.file_field :image_file, class: "image_form", id: :icon_file
       .top_center
         = current_user.name
       .top_right

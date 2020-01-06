@@ -1,4 +1,7 @@
 ja:
+  errors:
+    messages:
+      extension_whitelist_error: "の形式が違います"
   activerecord:
     errors:
       models:
@@ -30,6 +33,12 @@ ja:
               too_long: "は%{count}文字以下に設定して下さい。"
               invalid: "は有効でありません。"
               confirmation: "が一致していません。"
+        profile:
+          attributes:
+            image_file:
+            introduction_title:
+            introduction:
+              too_long: "は%{count}文字以下に設定して下さい。"
     attributes:
       user:
         current_password: "現在のパスワード"
@@ -38,6 +47,10 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "次回から自動的にログイン"
+      profile:
+        image_file: "画像"
+        introduction_title: "自己紹介タイトル"
+        introduction: "自己紹介文"
     models:
       user: "ユーザ"
   devise:

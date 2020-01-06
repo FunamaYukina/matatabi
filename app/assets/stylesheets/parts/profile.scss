@@ -12,13 +12,31 @@
 
     .top_left {
       width: 200px;
-      height: 150px;
+      height: 190px;
       padding-top: 20px;
       text-align: center;
 
       .top_icon {
         border-radius: 60px;
         border: 2px solid #CCC;
+      }
+      .image_input_btn{
+        display: block;
+        background-color: #228B22;
+        width: 150px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 25px;
+        border-radius: 5px;
+        padding-top: 4px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .image_form{
+        display: none;
       }
     }
 
@@ -52,7 +70,7 @@
   .center_profile_title {
     position: absolute;
     top: 90px;
-    left: 180px;
+    left: 200px;
 
     .title {
       position: relative;
@@ -72,7 +90,7 @@
       content: "";
       position: absolute;
       top: -24px;
-      left: 20%;
+      left: 10%;
       margin-left: -15px;
       border: 12px solid transparent;
       border-bottom: 12px solid #FFF;
@@ -83,7 +101,7 @@
       content: "";
       position: absolute;
       top: -30px;
-      left: 20%;
+      left: 10%;
       margin-left: -17px;
       border: 14px solid transparent;
       border-bottom: 14px solid #CCC;
@@ -102,7 +120,7 @@
 
   .container_center {
     padding-left: 20px;
-    margin: 50px 20px 20px;
+    margin: 20px 20px 20px;
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: white;
