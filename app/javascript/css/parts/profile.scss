@@ -1,0 +1,210 @@
+.user_container {
+  width: 670px;
+  margin: 10px auto 20px auto;
+  padding-bottom: 20px;
+  background-color: #F5FFFA;
+  text-align: left;
+  border: 1px solid #CCC;
+  position: relative;
+
+  .container_top {
+    display: flex;
+
+    .top_left {
+      width: 200px;
+      height: 190px;
+      padding-top: 20px;
+      text-align: center;
+
+      .top_icon {
+        border-radius: 60px;
+        border: 2px solid #CCC;
+      }
+      .image_input_btn{
+        display: block;
+        background-color: #228B22;
+        width: 150px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 25px;
+        border-radius: 5px;
+        padding-top: 4px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .image_form{
+        display: none;
+      }
+    }
+
+    .top_center {
+      height: 150px;
+      width: 230px;
+      padding-top: 60px;
+      font-size: 24px;
+    }
+
+    .top_right {
+      height: 150px;
+      width: 250px;
+
+      .edit-btn {
+        display: block;
+        background-color: #228B22;
+        width: 200px;
+        height: 30px;
+        margin-top: 60px;
+        margin-left: 10px;
+        border-radius: 5px;
+        padding-top: 2px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+      }
+    }
+  }
+
+  .center_profile_title {
+    position: absolute;
+    top: 90px;
+    left: 200px;
+
+    .title {
+      position: relative;
+      display: inline-block;
+      margin: 1.5em 0;
+      padding: 7px 10px;
+      min-width: 120px;
+      max-width: 100%;
+      color: #555;
+      font-size: 16px;
+      background: #FFF;
+      border: solid 3px #CCC;
+      box-sizing: border-box;
+    }
+
+    .title:before {
+      content: "";
+      position: absolute;
+      top: -24px;
+      left: 10%;
+      margin-left: -15px;
+      border: 12px solid transparent;
+      border-bottom: 12px solid #FFF;
+      z-index: 2;
+    }
+
+    .title:after {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 10%;
+      margin-left: -17px;
+      border: 14px solid transparent;
+      border-bottom: 14px solid #CCC;
+      z-index: 1;
+    }
+
+    .title p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .field {
+      width: 300px;
+    }
+  }
+
+  .container_center {
+    padding-left: 20px;
+    margin: 20px 20px 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+
+    .center_profile, .center_place {
+      min-height: 80px;
+    }
+
+    span {
+      border-bottom: solid 2px #339933;
+      font-size: 20px;
+    }
+
+    .profile, .place {
+      margin-top: 10px;
+      width: 580px;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    .textarea {
+      width: 440px;
+      height: 120px;
+      margin-top: 10px;
+      border: 1px solid #CCC;
+    }
+
+    .field {
+      margin-top: 10px;
+      width: 300px;
+      border: 1px solid #CCC;
+    }
+
+    .center_submit {
+      .submit-btn {
+        display: block;
+        background-color: #228B22;
+        width: 240px;
+        height: 30px;
+        margin-top: 10px;
+        border-radius: 5px;
+        padding-top: 2px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.review_container {
+  background-color: #F5FFFA;
+  width: 670px;
+  border: 1px solid #CCC;
+  margin: 10px auto 20px auto;
+  padding: 30px 20px 20px 20px;
+
+  .review_post {
+    background-color: white;
+    border: 2px solid #CCC;
+    display: flex;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    .post_left {
+      .review_icon {
+        border-radius: 25px;
+        border: 2px solid #CCC;
+      }
+    }
+
+    .post_right {
+      .right_name {
+        width: 200px;
+        height: 50px;
+        padding-top: 12px;
+        padding-left: 20px;
+      }
+
+      .right_detail {
+        padding-left: 20px;
+      }
+    }
+  }
+}
