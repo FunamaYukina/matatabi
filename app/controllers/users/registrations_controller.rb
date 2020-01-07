@@ -12,17 +12,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    @user = User.last
-    if sign_up_params[:traveler_type] == "true"
-      @traveler = @user.build_traveler
-      @traveler.save
-    elsif sign_up_params[:traveler_type]=="false"
-      @advisor = @user.build_advisor
-      @advisor.save
-    else
-      @traveler = @user.build_traveler
-      @traveler.save
-    end
   end
 
   # GET /resource/edit
