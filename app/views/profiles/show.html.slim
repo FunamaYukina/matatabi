@@ -8,7 +8,7 @@
       - if current_user == @user
         = link_to "プロフィールを編集する", edit_user_profile_path, class: 'edit-btn'
   .center_profile_title
-    - unless @user.profile.introduction_title.nil?
+    - unless @user.profile.introduction_title.empty?
       .title
         = @user.profile.introduction_title
   .container_center

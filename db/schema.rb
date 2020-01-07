@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_12_26_140039) do
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "image_file"
-    t.string "introduction_title"
+    t.string "introduction_title", default: ""
     t.text "introduction"
     t.string "place"
     t.datetime "created_at", null: false
