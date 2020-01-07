@@ -48,8 +48,10 @@ RSpec.describe User, type: :request do
 
       it "ユーザーが存在しない場合、ログインできないこと" do
         post user_session_path, params: {
+            user:{
             email: "xxx@test.com",
             password: "test_password"
+            }
         }
         expect(flash[:notice]).to be nil
         expect(flash[:alert]).to include "メールアドレスまたはパスワードが違います。"
