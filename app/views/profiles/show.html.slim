@@ -1,18 +1,18 @@
 .user_container
   .container_top
     .top_left
-      / = image_tag current_user.profile.image_file,  :size => '120x120', :class => 'top_icon'
+      = image_tag current_user.profile.image_file.url,  :size => '120x120', :class => 'top_icon'
     .top_center
       = @user.name
     .top_right
       - if current_user == @user
         = link_to "プロフィールを編集する", edit_user_profile_path, class: 'edit-btn'
   .center_profile_title
-    - unless @user.profile.introduction_title.nil?
+    - unless @user.profile.introduction_title.empty?
       .title
         = @user.profile.introduction_title
   .container_center
-    .center_profile
+    .center_profiled
       span プロフィール
       br
         .profile
@@ -22,6 +22,12 @@
       br
         .place
           = @user.profile.place
+- if @user.advisor
+  - if @user.advisor.plans
+    - if @user == current_user
+      = render partial: 'shared/plans/my_plans'
+    - else
+      = render partial: 'shared/plans/user_plans'
 .review_container
   p レビュー6件
   .review_post

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   }
 
   resources :users, param: :name do
+    resources :plans, except: [:show, :index]
     resource :profile, only: [:show, :edit, :update]
   end
 end

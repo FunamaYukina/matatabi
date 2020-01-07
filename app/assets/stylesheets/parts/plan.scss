@@ -1,0 +1,146 @@
+
+.plan_container {
+  width: 670px;
+  margin: 10px auto 20px auto;
+  padding-bottom: 20px;
+  background-color: #F5FFFA;
+  text-align: left;
+  border: 1px solid #CCC;
+  position: relative;
+
+  .container_bottom {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 25px;
+
+    .bottom_left {
+      width: 430px;
+      display: inline-block;
+
+      span {
+        border-bottom: solid 2px #339933;
+        font-size: 20px;
+      }
+    }
+
+    .bottom_right {
+      width: 190px;
+      display: inline-block;
+      text-align: right;
+
+      .new-btn {
+        display: block;
+        background-color: #228B22;
+        //width: 160px;
+        height: 30px;
+        margin-top: 10px;
+        border-radius: 5px;
+        padding-top: 2px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+      }
+    }
+
+    .plan_box {
+      background-color: white;
+      border: 2px solid #CCC;
+      padding: 10px 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      .title {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      p, .description {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      .submit-btn{
+        display: block;
+        background-color: #228B22;
+        width: 160px;
+        height: 30px;
+        border-radius: 5px;
+        padding-top: 2px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .edit {
+        background-color: #CCCCCC;
+        width: 160px;
+        margin-left: auto;
+
+        .edit-btn{
+          display: block;
+          background-color: #228B22;
+          width: 160px;
+          height: 30px;
+          border-radius: 5px;
+          padding-top: 2px;
+          color: white;
+          text-decoration: none;
+          text-align: center;
+          margin-top: 10px;
+        }
+
+      }
+    }
+  }
+  .edit_plan,.new_plan{
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 25px;
+    span {
+      border-bottom: solid 2px #339933;
+      font-size: 20px;
+    }
+    .plan_box{
+      p{
+        margin-bottom: 5px;
+      }
+      .title{
+        .text_field_area{
+          border: 1px solid #CCC;
+        }
+      }
+      .description{
+        .text_area{
+          width: 600px;
+          height: 150px;
+          border: 1px solid #CCC;
+        }
+      }
+      .fee{
+        .number_area{
+          border: 1px solid #CCC;
+          width: 100px;
+        }
+        span{
+          border-bottom: none;
+          font-size: 16px;
+          padding-right: 10px;
+          padding-left: 10px;
+        }
+      }
+      .submit-btn {
+        display: block;
+        background-color: #228B22;
+        width: 240px;
+        height: 30px;
+        margin-top: 20px;
+        border-radius: 5px;
+        padding-top: 2px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+      }
+    }
+  }
+}

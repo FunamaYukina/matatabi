@@ -1,0 +1,19 @@
+.plan_container
+  .edit_plan
+    span 相談プラン
+    = form_for(@plan, url: user_plan_path(@plan.id), html: {method: "patch"}) do |p|
+      .plan_box
+        .title
+          p プランのタイトル
+          = p.text_field :title,class: "text_field_area"
+        .description
+          p プランの説明
+          = p.text_area :description, class: "text_area"
+        / = plan.description
+        .fee
+          p プランの料金
+          span 一回につき
+          = p.number_field :fee,class: "number_area"
+          span 円
+        .submit_btn
+          = p.submit "プランを更新する", class: "submit-btn"

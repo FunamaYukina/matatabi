@@ -20,11 +20,11 @@
         p.title 初めはどちらとして登録しますか？
         p.memo  （あとで変更できます）
         label
-          = f.radio_button :user_type, true, :checked => true, :value => true
+          = f.radio_button :traveler_type, true, :checked => true, :value => true
           |アドバイスしてもらう
         br
         label
-          = f.radio_button :user_type, false, :value => false
+          = f.radio_button :traveler_type, false, :value => false
           |アドバイザーになる
       .actions
         = f.submit "登録する", class: "submit-btn"
