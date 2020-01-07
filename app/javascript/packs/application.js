@@ -20,3 +20,4 @@ require("jquery")
 // import 'bootstrap-sass';
 import 'bootstrap'
 import '../css/application.scss'
+import '../jquery/image_preview.js'
