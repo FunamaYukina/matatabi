@@ -28,6 +28,36 @@ RSpec.describe User, type: :request do
     end
   end
 
+  describe "registrations#edit" do
+    context "未ログインの場合" do
+      it "ログインページへリダイレクトされること" do
+        get edit_user_registration_path
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+
+    context "ログイン済みの場合" do
+      before do
+        sign_in user
+      end
+
+      it "レスポンス200が返ってくること" do
+        get edit_user_registration_path
+        expect(response).to have_http_status(:ok)
+      end
+
+      it "ユーザー情報の更新ができること" do
+        post user_registration_path, params: {
+            user: {
+                email: "changed@test.com",
+                password: "changed_password"
+            }
+        }
+        expect(response).to redirect_to top_path
+      end
+    end
+  end
+
   describe "sessions#new" do
     context "未ログインの場合" do
       it "レスポンス200が返ってくること" do
@@ -48,9 +78,9 @@ RSpec.describe User, type: :request do
 
       it "ユーザーが存在しない場合、ログインできないこと" do
         post user_session_path, params: {
-            user:{
-            email: "xxx@test.com",
-            password: "test_password"
+            user: {
+                email: "xxx@test.com",
+                password: "test_password"
             }
         }
         expect(flash[:notice]).to be nil
