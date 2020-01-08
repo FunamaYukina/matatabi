@@ -16,9 +16,9 @@ class User < ApplicationRecord
   after_create :create_profile
 
   def create_user_type
-    if self.traveler_type == "true"
+    if self.traveler_type == true
       self.build_traveler
-    elsif self.traveler_type == "false"
+    elsif self.traveler_type == false
       self.build_advisor
     end
   end

@@ -1,4 +1,12 @@
 ja:
+  users:
+    flash:
+      create:
+        success: "%{item}を作成しました"
+        danger: "%{item}の作成に失敗しました"
+      update:
+        success: "%{item}を編集しました"
+        danger: "%{item}の編集に失敗しました"
   errors:
     messages:
       extension_whitelist_error: "の形式が違います"
@@ -33,6 +41,8 @@ ja:
               too_long: "は%{count}文字以下に設定して下さい。"
               invalid: "は有効でありません。"
               confirmation: "が一致していません。"
+            current_password:
+              blank: "が入力されていません。"
         profile:
           attributes:
             image_file:

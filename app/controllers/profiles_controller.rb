@@ -12,10 +12,10 @@ class ProfilesController < ApplicationController
 
   def update
     if current_user.profile.update(profile_params)
-      flash[:success] = "ユーザー情報を編集しました"
+      flash[:success] = t('users.flash.update.success',item: "ユーザー情報")
       redirect_to user_profile_path
     else
-      flash.now[:danger] = "ユーザー情報の更新に失敗しました"
+      flash.now[:danger] = t('users.flash.update.danger',item: "ユーザー情報")
       render "settings/profiles/edit"
     end
   end

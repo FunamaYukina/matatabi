@@ -1,6 +1,6 @@
 // 新規登録　,ログイン
 
-.new_container {
+.new_container,.edit_container {
   width: 370px;
   margin-right: auto;
   margin-left: auto;
@@ -52,5 +52,25 @@
     a {
       text-decoration: none;
     }
+  }
+}
+.other_container{
+  width: 370px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  padding-bottom: 15px;
+  background-color: #E6FFE9;
+  text-align: center;
+  border: 1px solid #CCC;
+  p {
+    padding-top: 20px;
+    font-size: 20px;
+  }
+  .submit-btn {
+    background-color: dimgrey;
+    width: 200px;
+    color: white;
+    margin-bottom: 20px;
   }
 }
