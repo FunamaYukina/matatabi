@@ -3,5 +3,10 @@
 require "rails_helper"
 
 RSpec.describe Advisor, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "新規登録の際アドバイザーを選択した場合" do
+    it "アドバイザーとして登録されること" do
+      create(:user)
+      expect(Advisor.last.user.name).to eq User.last.name
+    end
+  end
 end
