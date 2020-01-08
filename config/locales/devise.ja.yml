@@ -1,4 +1,17 @@
 ja:
+  users:
+    flash:
+      profile:
+        update:
+          success: "ユーザー情報を編集しました"
+          danger: "ユーザー情報を編集しました"
+      plan:
+        create:
+          success: "プランを作成しました"
+          danger: "プランの作成に失敗しました"
+        update:
+          success: "プランを更新しました"
+          danger: "プランの更新に失敗しました"
   errors:
     messages:
       extension_whitelist_error: "の形式が違います"
