@@ -11,9 +11,9 @@ class PlansController < ApplicationController
   def create
     @plan=current_user.advisor.plans.build(plan_params)
     if @plan.save
-      flash[:success] = t 'users.flash.plan.create.success'
+      flash[:success] = t('users.flash.create.success',item: "プラン")
     else
-      flash[:danger] = t 'users.flash.plan.create.danger'
+      flash[:danger] = t('users.flash.create.danger',item: "プラン")
       render "/users/:user_name/plans/new"
     end
 
@@ -27,10 +27,10 @@ class PlansController < ApplicationController
   def update
     @plan = current_user.advisor.plans.find_by(id: params[:id])
     if @plan.update(plan_params)
-      flash[:success] = t 'users.flash.plan.update.success'
+      flash[:success] = t('users.flash.update.success',item: "プラン")
       redirect_to user_profile_path(user_name: current_user.name)
     else
-      flash.now[:danger] = t 'users.flash.plan.update.danger'
+      flash.now[:danger] = t('users.flash.update.success',item: "プラン")
       render "users/:user_name/plans/:id/edit"
     end
   end
