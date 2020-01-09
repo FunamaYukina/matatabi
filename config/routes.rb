@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, param: :name do
     resources :plans, except: [:show, :index]
+    get :search, on: :collection
     resource :profile, only: [:show, :edit, :update]
   end
 end

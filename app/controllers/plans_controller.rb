@@ -1,9 +1,6 @@
 class PlansController < ApplicationController
   before_action :authenticate_user!
 
-  def show
-  end
-
   def new
     @plan=current_user.advisor.plans.new
   end

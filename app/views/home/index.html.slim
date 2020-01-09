@@ -2,6 +2,9 @@
   .index-contents
     .index-top
       p 地域名を検索
+      = form_with url: search_users_path,method: :get, local: true do |f|
+        = f.text_field :name
+        = f.submit :search
     .index-center
       p 地方から探す
       .region-contents
