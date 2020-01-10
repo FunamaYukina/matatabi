@@ -40,21 +40,36 @@
 
 // index
 
-.index-container{
-  .index-contents{
+.index-container {
+  .index-contents {
     padding-top: 80px;
     width: 500px;
     margin-left: auto;
     margin-right: auto;
-    p{
+
+    p {
       text-align: center;
     }
-    .index-center{
+
+    .index-top {
+      text-align: center;
+
+      .search_btn {
+        background-color: #008800;
+        color: white;
+        padding:2px 15px;
+        vertical-align: initial;
+      }
+    }
+
+    .index-center {
       padding-top: 30px;
-      .region-contents{
+
+      .region-contents {
         text-align: center;
-        .region-top,.region-center,.region-bottom{
-          button{
+
+        .region-top, .region-center, .region-bottom {
+          button {
             background: #008800;
             color: white;
             font-size: 19px;
@@ -65,12 +80,13 @@
             height: 50px;
             display: inline-block;
             text-align: center;
-            margin:5px;
+            margin: 5px;
           }
         }
       }
     }
-    .index-bottom{
+
+    .index-bottom {
       padding-top: 30px;
     }
   }

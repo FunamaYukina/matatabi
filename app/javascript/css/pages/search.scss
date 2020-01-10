@@ -1,0 +1,97 @@
+.search_area {
+  background-color: #F5FFFA;
+
+  .search_container {
+    width: 670px;
+    min-height: 900px;
+    margin: 0 auto 20px auto;
+    padding-bottom: 20px;
+    text-align: center;
+
+    .search_form {
+      padding-top: 30px;
+
+      .search_btn {
+        background-color: #008800;
+        color: white;
+        padding: 2px 15px;
+        vertical-align: initial;
+      }
+    }
+
+    .search_result {
+      margin-top: 20px;
+
+      p {
+        font-size: 20px;
+      }
+
+      .searched_plan {
+        .plan_container {
+          width: 500px;
+          background-color: white;
+          border: 2px solid #CCC;
+          padding: 10px 20px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+
+          .user_box {
+            margin-bottom: 10px;
+
+            .user_icon {
+              display: inline-block;
+
+              .plan_user_icon {
+                border-radius: 25px;
+                border: 1px solid #CCC;
+              }
+            }
+
+            .user_name {
+              display: inline-block;
+              margin-left: 20px;
+              font-size: 18px;
+            }
+          }
+
+          .plan_box {
+            .title {
+              font-size: 16px;
+              margin-bottom: 10px;
+            }
+
+            .description {
+              margin-bottom: 5px;
+              font-size: 14px;
+            }
+
+            .fee {
+              text-align: right;
+              margin-right: 40px;
+            }
+
+          }
+
+          .plan_submit-btn {
+            //text-align: right;
+            margin-left: auto;
+
+            .submit-btn {
+              display: block;
+              background-color: #228B22;
+              width: 160px;
+              height: 30px;
+              border-radius: 5px;
+              padding-top: 2px;
+              color: white;
+              text-decoration: none;
+              text-align: center;
+              margin-top: 10px;
+              margin-left: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
