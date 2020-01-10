@@ -9,7 +9,7 @@ RSpec.describe User, type: :request do
     context "新規登録ユーザー登録に成功する場合" do
       it "新規ユーザーが登録されること" do
         user_params = attributes_for(:traveler_user)
-        post user_registration_path, params: {user: user_params}
+        post user_registration_path, params: { user: user_params }
         expect(response.status).to eq(302)
         expect(User.last.email).to eq user_params[:email]
         expect(response).to redirect_to top_path
@@ -21,7 +21,7 @@ RSpec.describe User, type: :request do
         sign_in user
         expect do
           user_params = attributes_for(:traveler_user)
-          post user_registration_path, params: {user: user_params}
+          post user_registration_path, params: { user: user_params }
         end.not_to change(User, :count)
         expect(response).to redirect_to top_path
       end
@@ -48,10 +48,10 @@ RSpec.describe User, type: :request do
 
       it "ユーザー情報の更新ができること" do
         post user_registration_path, params: {
-            user: {
-                email: "changed@test.com",
-                password: "changed_password"
-            }
+          user: {
+            email: "changed@test.com",
+            password: "changed_password"
+          }
         }
         expect(response).to redirect_to top_path
       end
@@ -68,20 +68,20 @@ RSpec.describe User, type: :request do
       it "ユーザーが存在する場合、ログイン出来ること" do
         create(:user)
         post user_session_path, params: {
-            user: {
-                email: "example@test.com",
-                password: "test_password"
-            }
+          user: {
+            email: "example@test.com",
+            password: "test_password"
+          }
         }
         expect(response).to redirect_to top_path
       end
 
       it "ユーザーが存在しない場合、ログインできないこと" do
         post user_session_path, params: {
-            user: {
-                email: "xxx@test.com",
-                password: "test_password"
-            }
+          user: {
+            email: "xxx@test.com",
+            password: "test_password"
+          }
         }
         expect(flash[:notice]).to be nil
         expect(flash[:alert]).to include "メールアドレスまたはパスワードが違います。"

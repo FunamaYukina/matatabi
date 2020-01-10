@@ -8,6 +8,7 @@ AllCops:
     - "bin/*"
     - "config/**/*"
     - "app/controllers/users/*"
+    - "node_modules/**/*"
   DisplayCopNames: true
 
 ##################### Style ##################################
