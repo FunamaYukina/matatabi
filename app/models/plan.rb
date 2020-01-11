@@ -6,8 +6,8 @@ class Plan < ApplicationRecord
   validates :description, length: { maximum: 500 }
 
   def self.search(name)
-    return Plan.none unless name
+    return Plan.none if name.empty?
 
-    Plan.where(["description LIKE ?", "%#{name}%"])
+    Plan.where(["description LIKE ? OR title LIKE ? ", "%#{name}%", "%#{name}%"])
   end
 end
