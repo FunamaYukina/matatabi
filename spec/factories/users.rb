@@ -17,9 +17,9 @@ FactoryBot.define do
     traveler_type { true }
   end
 
-  # trait :with_advisor do
-  #   after(:create) do |user|
-  #     user.advisor.create(attributes_for(:advisor))
-  #   end
-  # end
+  trait :with_plan do
+    after(:create) do |user|
+      user.advisor.plans.create(attributes_for(:plan))
+    end
+  end
 end

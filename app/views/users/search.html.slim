@@ -1,0 +1,26 @@
+.search_area
+  .search_container
+    .search_form
+      = form_with url: search_users_path, method: :get, local: true do |f|
+        = f.text_field :name, class: "search_input"
+        = button_tag type: 'submit', class: 'btn btn-default search_btn' do
+          i.fas.fa-search
+    .search_result
+      p 「#{@name}」の検索結果
+      .searched_plan
+        - @plans.each do |plan|
+          .plan_container
+            .user_box
+              .user_icon
+                = image_tag plan.advisor.user.profile.image_file.url, :size => '50x50', :class => 'plan_user_icon'
+              .user_name
+                = plan.advisor.user.name
+            .plan_box
+              .title
+                = "「" +plan.title + "」"
+              .description
+                = plan.description
+              .fee
+                = "１回 " +plan.fee.to_s + " 円"
+            .plan_submit-btn
+              = link_to "相談する", top_path, class: 'submit-btn'

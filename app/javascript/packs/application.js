@@ -19,5 +19,6 @@ require("jquery")
 // require("bootstrap");
 // import 'bootstrap-sass';
 import 'bootstrap'
+import '@fortawesome/fontawesome-free/js/all'
 import '../css/application.scss'
 import '../jquery/image_preview.js'

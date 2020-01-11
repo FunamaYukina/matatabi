@@ -2,18 +2,25 @@
   .index-contents
     .index-top
       p 地域名を検索
+      = form_with url: search_users_path, method: :get, local: true do |f|
+        = f.text_field :name, class: "search_input"
+        = button_tag type: 'submit', class: 'btn btn-default search_btn' do
+          i.fas.fa-search
     .index-center
       p 地方から探す
       .region-contents
         .region-top
-          button 北海道
-          button 東北
-          button 関東
+          =link_to "北海道", search_users_path(name:"北海道"), class: 'btn button'
+          =link_to "東北", search_users_path(name:"東北 青森 岩手 秋田 山形 福島"), class: 'btn button'
+          =link_to "関東", search_users_path(name:"関東 東京 栃木 神奈川 群馬 埼玉 茨城 千葉"), class: 'btn button'
         .region-center
-          button 中部
-          button 近畿
-          button 中国
+          = link_to "中部", search_users_path(name: "中部 新潟 富山 石川 福井 長野 岐阜 山梨 静岡 愛知"), class: 'btn button'
+          = link_to "近畿", search_users_path(name: "近畿 滋賀 三重 京都 奈良 和歌山 兵庫"), class: 'btn button'
+          = link_to "中国", search_users_path(name: "中国 鳥取 島根 広島 山口 岡山"), class: 'btn button'
         .region-bottom
+          = link_to "四国", search_users_path(name: "四国 愛媛 高知 香川 徳島"), class: 'btn button'
+          = link_to "九州", search_users_path(name: "九州 福岡 長崎 大分 宮崎 鹿児島 熊本"), class: 'btn button'
+          = link_to "沖縄", search_users_path(name: "沖縄"), class: 'btn button'
           button 四国
           button 九州
           button 沖縄

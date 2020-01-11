@@ -5,6 +5,9 @@ require "rails_helper"
 RSpec.describe Plan, type: :request do
   let(:user) { create(:user) }
 
+  let(:plan) { create(:plan, advisor: advisor) }
+  let(:advisor) { create(:advisor, user: user) }
+
   describe "plans#new" do
     context "未ログインの場合" do
       it "ログインページへリダイレクトされること" do
@@ -18,7 +21,7 @@ RSpec.describe Plan, type: :request do
       before do
         sign_in user
         advisor = create(:advisor, user: user)
-        plan = create(:plan, advisor: advisor)
+        create(:plan, advisor: advisor)
       end
 
       it "レスポンス200が返ってくること" do
@@ -40,12 +43,10 @@ RSpec.describe Plan, type: :request do
     context "ログイン済みの場合" do
       before do
         sign_in user
-        advisor = create(:advisor, user: user)
-        @plan = create(:plan, advisor: advisor)
       end
 
       it "レスポンス200が返ってくること" do
-        get edit_user_plan_path(user_name: user.name, id: @plan.id)
+        get edit_user_plan_path(user_name: user.name, id: plan.id)
         expect(response).to have_http_status(:ok)
       end
     end
