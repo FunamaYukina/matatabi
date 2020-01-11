@@ -10,14 +10,17 @@
       p 地方から探す
       .region-contents
         .region-top
-          button 北海道
-          button 東北
-          button 関東
+          =link_to "北海道", search_users_path(name:"北海道"), class: 'btn button'
+          =link_to "東北", search_users_path(name:"東北"), class: 'btn button'
+          =link_to "関東", search_users_path(name:"関東"), class: 'btn button'
         .region-center
-          button 中部
-          button 近畿
-          button 中国
+          = link_to "中部", search_users_path(name: "中部"), class: 'btn button'
+          = link_to "近畿", search_users_path(name: "近畿"), class: 'btn button'
+          = link_to "中国", search_users_path(name: "中国"), class: 'btn button'
         .region-bottom
+          = link_to "四国", search_users_path(name: "四国"), class: 'btn button'
+          = link_to "九州", search_users_path(name: "九州"), class: 'btn button'
+          = link_to "沖縄", search_users_path(name: "沖縄"), class: 'btn button'
           button 四国
           button 九州
           button 沖縄

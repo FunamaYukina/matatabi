@@ -6,7 +6,7 @@
         = button_tag type: 'submit', class: 'btn btn-default search_btn' do
           i.fas.fa-search
     .search_result
-      p 検索結果
+      p 「#{@name}」の検索結果
       .searched_plan
         - @plans.each do |plan|
           .plan_container

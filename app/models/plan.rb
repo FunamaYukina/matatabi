@@ -2,12 +2,19 @@
 
 class Plan < ApplicationRecord
   belongs_to :advisor
-  validates :title, length: { maximum: 100 }
-  validates :description, length: { maximum: 500 }
+  validates :title, length: {maximum: 100}
+  validates :description, length: {maximum: 500}
 
   def self.search(name)
-    return Plan.none if name.empty?
+    plans = []
 
-    Plan.where(["description LIKE ? OR title LIKE ? ", "%#{name}%", "%#{name}%"])
+    return plans if name.empty?
+    # キーワード分割する
+    keywords = name.split(/[[:blank:]]+/).select(&:present?)
+    keywords.each do |keyword|
+      plans += Plan.where(["title LIKE :name OR description LIKE :name", name: "%#{keyword}%"])
+    end
+
+    plans.uniq || []
   end
 end
