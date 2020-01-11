@@ -118,15 +118,6 @@ RSpec.describe User, type: :request do
   end
 
   describe "#search" do
-    context "未ログインの場合" do
-      it "ログインページへリダイレクトされること" do
-        get search_users_path
-        expect(flash[:alert]).to include "アカウント登録もしくはログインしてください。"
-        expect(response).to redirect_to new_user_session_path
-      end
-    end
-
-    context "ログイン済みの場合" do
       it "レスポンス200が返ってくること" do
         sign_in user
         get search_users_path(name: "test")
@@ -139,6 +130,5 @@ RSpec.describe User, type: :request do
         expect(response).to have_http_status(:ok)
         expect(response.body).to include user.advisor.plans.first.title
       end
-    end
   end
 end

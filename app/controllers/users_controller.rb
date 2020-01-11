@@ -5,6 +5,6 @@ class UsersController < ApplicationController
 
   def search
     @plans = Plan.search(params[:name])
-    @name=params[:name]
+    @name = params[:name]
   end
 end
