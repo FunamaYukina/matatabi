@@ -5,6 +5,6 @@ FactoryBot.define do
     title { "test_title" }
     description { "test_description" }
     fee { 500 }
-    association :advisor
+      # association :advisor
   end
 end

@@ -6,7 +6,8 @@ RSpec.describe Plan, type: :model do
   describe "validation" do
     context "プランの編集に成功する場合" do
       it "詳細がない場合でも、編集に成功すること" do
-        plan = build(:plan, description: nil)
+        user = create(:user)
+        plan = build(:plan, description: nil, advisor_id: user.advisor.id)
         expect(plan).to be_valid
       end
     end
@@ -27,12 +28,11 @@ RSpec.describe Plan, type: :model do
   end
 
   describe "#search" do
-    let(:plan) { create(:plan) }
+    let(:user) { create(:user, :with_plan) }
 
     context "検索した言葉がプランテーブルにある場合" do
       it "該当するプランを返すこと" do
-        expect(Plan.search("test")).to include plan
-
+        expect(Plan.search("test")).to include user.advisor.plans.first
       end
     end
     context "検索した言葉がプランテーブルにない場合" do
