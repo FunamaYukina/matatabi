@@ -5,6 +5,9 @@ require "rails_helper"
 RSpec.describe Plan, type: :request do
   let(:user) { create(:user) }
 
+  let(:plan) { create(:plan, advisor: advisor) }
+  let(:advisor) { create(:advisor, user: user) }
+
   describe "plans#new" do
     context "未ログインの場合" do
       it "ログインページへリダイレクトされること" do
@@ -28,9 +31,6 @@ RSpec.describe Plan, type: :request do
     end
   end
 
-  let(:advisor) { create(:advisor, user: user) }
-  let(:plan) { create(:plan, advisor: advisor) }
-  
   describe "plans#edit" do
     context "未ログインの場合" do
       it "ログインページへリダイレクトされること" do

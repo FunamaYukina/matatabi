@@ -35,6 +35,7 @@ RSpec.describe Plan, type: :model do
         expect(Plan.search("test")).to include user.advisor.plans.first
       end
     end
+
     context "検索した言葉がプランテーブルにない場合" do
       it "何も返さないこと" do
         expect(Plan.search("").empty?).to be true
