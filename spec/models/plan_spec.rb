@@ -25,4 +25,20 @@ RSpec.describe Plan, type: :model do
       end
     end
   end
+
+  describe "#search" do
+    let(:plan) { create(:plan) }
+
+    context "検索した言葉がプランテーブルにある場合" do
+      it "該当するプランを返すこと" do
+        expect(Plan.search("test")).to include plan
+
+      end
+    end
+    context "検索した言葉がプランテーブルにない場合" do
+      it "何も返さないこと" do
+        expect(Plan.search("").empty?).to be true
+      end
+    end
+  end
 end
