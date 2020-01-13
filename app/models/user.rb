@@ -15,11 +15,22 @@ class User < ApplicationRecord
   before_create :create_user_type
   after_create :create_profile
 
+  has_many :talks, dependent: :destroy
+  has_many :room_members, dependent: :destroy
   def create_user_type
     if self.traveler_type == true
       self.build_traveler
     elsif self.traveler_type == false
       self.build_advisor
     end
+  end
+
+  def find_talking_user
+    Room_member.where(user_id: self.id)
+    user_ids = Room_member.pluck(:room_id).uniq
+    user_ids.delete(self.id)
+    @users = User.where(id: user_ids)
+    # users.delete(id: self.id)
+    # users
   end
 end
