@@ -1,0 +1,7 @@
+.room_container
+
+p name
+= current_user.name
+p talking_friend
+- @users.each do |user|
+   = user.name
