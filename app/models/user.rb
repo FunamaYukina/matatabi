@@ -17,6 +17,11 @@ class User < ApplicationRecord
 
   has_many :talks, dependent: :destroy
   has_many :rooms, dependent: :destroy
+  has_many :question_rooms, class_name: "Room",foreign_key: "questioner_id",dependent: :destroy
+  has_many :answer_rooms, class_name: "Room",foreign_key: "answerer_id",dependent: :destroy
+
+  has_many :questioner, through: :question_rooms, source: :questioner
+  has_many :amswerer, through: :answer_rooms, source: :amswerer
 
   def create_user_type
     if self.traveler_type == true

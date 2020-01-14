@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_12_022913) do
+ActiveRecord::Schema.define(version: 2020_01_12_022617) do
 
   create_table "advisors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -38,15 +38,6 @@ ActiveRecord::Schema.define(version: 2020_01_12_022913) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
-  end
-
-  create_table "room_members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "room_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["room_id"], name: "index_room_members_on_room_id"
-    t.index ["user_id"], name: "index_room_members_on_user_id"
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,8 +81,6 @@ ActiveRecord::Schema.define(version: 2020_01_12_022913) do
   add_foreign_key "advisors", "users"
   add_foreign_key "plans", "advisors"
   add_foreign_key "profiles", "users"
-  add_foreign_key "room_members", "rooms"
-  add_foreign_key "room_members", "users"
   add_foreign_key "talks", "rooms"
   add_foreign_key "talks", "users"
   add_foreign_key "travelers", "users"
