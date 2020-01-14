@@ -1,0 +1,71 @@
+body {
+  background-color: #F5FFFA;
+  text-align: center;
+
+  .room_container {
+    width: 670px;
+    margin: 10px auto 20px auto;
+
+    .room_header {
+      width: 670px;
+      height: 50px;
+      border: 1px solid #CCC;
+      background-color: #008080;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+
+      p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .room_center {
+      background-color: white;
+      text-align: left;
+
+      .room_box {
+        p{
+          border-bottom: 1px solid #CCC;
+          background-color: #DDDDDD;
+          padding: 10px 0 10px 30px;
+          margin-bottom: 0;
+        }
+        .member_box {
+          height: 60px;
+          border-bottom: 1px solid #CCC;
+
+          .member_image {
+            width: 80px;
+            display: inline-block;
+            padding-top: 5px;
+            padding-left: 20px;
+
+            .member_icon {
+              border-radius: 25px;
+              border: 2px solid #CCC;
+            }
+          }
+
+          .member_name {
+            //background-color: #339933;
+            width: 200px;
+            display: inline-block;
+            margin-left: 30px;
+            vertical-align: middle;
+            font-size: 18px;
+            color: black;
+          }
+
+          .member_message {
+            width: 300px;
+            text-align: right;
+            display: inline-block;
+            color: #999999;
+          }
+        }
+      }
+    }
+  }
+}

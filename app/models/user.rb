@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :name, presence: true, uniqueness: { case_sensitive: true }
+  validates :name, presence: true, uniqueness: {case_sensitive: true}
   has_one :advisor, dependent: :destroy
   has_one :traveler, dependent: :destroy
   accepts_nested_attributes_for :advisor
@@ -16,7 +16,8 @@ class User < ApplicationRecord
   after_create :create_profile
 
   has_many :talks, dependent: :destroy
-  has_many :room_members, dependent: :destroy
+  has_many :rooms, dependent: :destroy
+
   def create_user_type
     if self.traveler_type == true
       self.build_traveler
@@ -25,12 +26,11 @@ class User < ApplicationRecord
     end
   end
 
-  def find_talking_user
-    Room_member.where(user_id: self.id)
-    user_ids = Room_member.pluck(:room_id).uniq
-    user_ids.delete(self.id)
-    @users = User.where(id: user_ids)
-    # users.delete(id: self.id)
-    # users
+  def find_questioner
+    @answering_rooms = Room.where(answerer_id: self.id)
+  end
+
+  def find_answerer
+    @questioning_rooms = Room.where(questioner_id: self.id)
   end
 end

@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2020_01_12_022913) do
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "questioner_id", null: false
+    t.integer "answerer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

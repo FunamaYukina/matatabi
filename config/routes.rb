@@ -12,4 +12,8 @@ Rails.application.routes.draw do
     get :search, on: :collection
     resource :profile, only: [:show, :edit, :update]
   end
+
+  resources :rooms do
+
+  end
 end

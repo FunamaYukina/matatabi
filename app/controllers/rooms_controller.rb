@@ -4,6 +4,11 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = current_user.find_talking_user
+    @answering_rooms = current_user.find_questioner
+    @questioning_rooms = current_user.find_answerer
+  end
+
+  def show
+
   end
 end
