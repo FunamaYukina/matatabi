@@ -14,13 +14,13 @@
             .member_message
               = Talk.find_by(room_id:qroom.id).talk_content.truncate(15) unless Talk.find_by(room_id:qroom.id).nil?
     .room_box
-      p 質問中のユーザー一覧
+      p 回答中のユーザー一覧
       - @answering_rooms.each do |aroom|
         .member_box
           = link_to room_path(id: aroom.id) do
             .member_image
-              = image_tag User.find(aroom.answerer_id).profile.image_file.url, :size => '50x50', :class => 'member_icon'
+              = image_tag User.find(aroom.questioner_id).profile.image_file.url, :size => '50x50', :class => 'member_icon'
             .member_name
-              = User.find(aroom.answerer_id).name
+              = User.find(aroom.questioner_id).name
             .member_message
               = Talk.find_by(room_id:aroom.id).talk_content.truncate(15) unless Talk.find_by(room_id:aroom.id).nil?
