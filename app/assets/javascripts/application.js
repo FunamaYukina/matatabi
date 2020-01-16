@@ -12,7 +12,6 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require turbolinks
 //= require_tree .
 
 const readImage = (fileField, preview, options) => {
