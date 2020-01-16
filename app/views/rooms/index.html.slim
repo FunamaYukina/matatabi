@@ -1,26 +1,27 @@
-.room_container
-  .room_header
-    p トーク一覧
-  .room_center
-    .room_box
-      p 質問中のユーザー一覧
-      - @questioning_rooms.each do |qroom|
-        .member_box
-          = link_to room_path(id: qroom.id) do
-            .member_image
-              = image_tag User.find(qroom.answerer_id).profile.image_file.url, :size => '50x50', :class => 'member_icon'
-            .member_name
-              = User.find(qroom.answerer_id).name
-            .member_message
-              = Talk.find_by(room_id:qroom.id).talk_content.truncate(15) unless Talk.find_by(room_id:qroom.id).nil?
-    .room_box
-      p 回答中のユーザー一覧
-      - @answering_rooms.each do |aroom|
-        .member_box
-          = link_to room_path(id: aroom.id) do
-            .member_image
-              = image_tag User.find(aroom.questioner_id).profile.image_file.url, :size => '50x50', :class => 'member_icon'
-            .member_name
-              = User.find(aroom.questioner_id).name
-            .member_message
-              = Talk.find_by(room_id:aroom.id).talk_content.truncate(15) unless Talk.find_by(room_id:aroom.id).nil?
+.room_body
+  .room_container
+    .room_header
+      p トーク一覧
+    .room_center
+      .room_box
+        p 質問中のユーザー一覧
+        - @questioning_rooms.each do |qroom|
+          .member_box
+            = link_to room_path(id: qroom.id) do
+              .member_image
+                = image_tag User.find(qroom.answerer_id).profile.image_file.url, :size => '50x50', :class => 'member_icon'
+              .member_name
+                = User.find(qroom.answerer_id).name
+              .member_message
+                = Talk.find_by(room_id:qroom.id).talk_content.truncate(15) unless Talk.find_by(room_id:qroom.id).nil?
+      .room_box
+        p 回答中のユーザー一覧
+        - @answering_rooms.each do |aroom|
+          .member_box
+            = link_to room_path(id: aroom.id) do
+              .member_image
+                = image_tag User.find(aroom.questioner_id).profile.image_file.url, :size => '50x50', :class => 'member_icon'
+              .member_name
+                = User.find(aroom.questioner_id).name
+              .member_message
+                = Talk.find_by(room_id:aroom.id).talk_content.truncate(15) unless Talk.find_by(room_id:aroom.id).nil?

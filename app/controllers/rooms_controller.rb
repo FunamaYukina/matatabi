@@ -9,6 +9,7 @@ class RoomsController < ApplicationController
   end
 
   def show
-
+    @room = Room.find(params[:id])
+    @talks = Talk.where(room_id: @room.id)
   end
 end

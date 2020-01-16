@@ -1,10 +1,12 @@
-body {
+.room_body {
   background-color: #F5FFFA;
   text-align: center;
+  min-height: 800px;
 
   .room_container {
     width: 670px;
-    margin: 10px auto 20px auto;
+    margin:0 auto 20px auto;
+    padding-top: 10px;
 
     .room_header {
       width: 670px;
@@ -66,6 +68,37 @@ body {
           }
         }
       }
+    }
+  }
+}
+
+// show
+.show_body{
+  background-color: #F5FFFA;
+  text-align: center;
+  min-height: 800px;
+  padding-top: 10px;
+
+  .show_container{
+    width: 670px;
+    margin:0 auto 20px auto;
+    border: 1px #CCC solid;
+    .show_header{
+      height: 60px;
+      background-color: #339933;
+    }
+    .show_center{
+      height: 500px;
+      background-color: white;
+      .show_my_talk{
+        background-color: #DADADA;
+        display: block;
+        text-align: right;
+      }
+    }
+    .show_bottom{
+      height: 60px;
+      background-color: #E6FFE9;
     }
   }
 }

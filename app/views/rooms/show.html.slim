@@ -1,1 +1,17 @@
-p show
+.show_body
+  .show_container
+    .show_header
+    .show_center
+      - @talks.each do |talk|
+        .show_my_talk
+          #message
+          = talk.talk_content
+        / - if talk.user_id==current_user.id
+        /   .show_my_talk
+        /     = talk.talk_content
+        / - else
+        /   .show_other_talk
+        /     = talk.talk_content
+    .show_bottom
+
+= javascript_pack_tag 'components/talks'
