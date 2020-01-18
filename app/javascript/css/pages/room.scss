@@ -86,10 +86,28 @@
     .show_header{
       height: 60px;
       background-color: #339933;
+      color: white;
+      text-align: left;
+      .header_left{
+        display: inline-block;
+        width: 220px;
+        padding-left: 20px;
+        a {
+          color: white;
+        }
+      }
+      .header_center {
+        display: inline-block;
+        width: 220px;
+        text-align: center;
+        padding-top: 10px;
+        font-size: 24px;
+      }
     }
     .show_center{
       height: 500px;
       background-color: white;
+      overflow: auto;
       .show_my_talk{
         background-color: #DADADA;
         display: block;
@@ -97,8 +115,20 @@
       }
     }
     .show_bottom{
-      height: 60px;
+      height: 100px;
       background-color: #E6FFE9;
+      textarea{
+        margin-top: 5px;
+        //wrap:hard
+      }
+      button{
+        background-color: #228B22;
+        color: white;
+        padding: 5px 10px;
+        vertical-align: top;
+        margin-top: 25px;
+        margin-left: 10px;
+      }
     }
   }
 }

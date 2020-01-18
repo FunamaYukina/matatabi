@@ -1,17 +1,25 @@
+javascript:
+    rails = window.rails = {};
+    rails.messages = #{raw @talks.to_json};
 .show_body
   .show_container
     .show_header
-    .show_center
-      - @talks.each do |talk|
+      .header_left
+        = link_to rooms_path do
+          i.fas.fa-angle-left
+          | トーク一覧
+      .header_center
+        = @member.name
+    / .show_center
+      / - @talks.each do |talk|
         .show_my_talk
-          #message
           = talk.talk_content
-        / - if talk.user_id==current_user.id
-        /   .show_my_talk
-        /     = talk.talk_content
-        / - else
-        /   .show_other_talk
-        /     = talk.talk_content
-    .show_bottom
+    #app
 
+    / .show_bottom
+    /   = form_for @talk, html: {id: 'message-form'} do |f|
+    /     = f.text_area :talk_content, cols: 40, "v-model" => "message.content"
+    /     / = f.submit "送信","v-on:click"=>"addNewMessage"
+    /     button v-on:click="addNewMessage" 送信
+    /     span content:
 = javascript_pack_tag 'components/talks'

@@ -10,6 +10,9 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
-    @talks = Talk.where(room_id: @room.id)
+    @talks = Talk.where(room_id: @room.id).to_json
+    @member = @room.find_member(current_user.id)
+    @talk = Talk.new
+
   end
 end
