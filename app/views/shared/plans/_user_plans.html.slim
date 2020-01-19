@@ -10,4 +10,5 @@
             = plan.description
           .fee
             = "１回 " +plan.fee.to_s + " 円"
-          = link_to "相談する", top_path, class: 'submit-btn'
+          = link_to "契約前に相談してみる", rooms_path(@room, params: {room: {answerer_id:@user.id, questioner_id:current_user.id}}), method: :post, class: 'consult-btn'
+          = link_to "契約する", user_contract_path, data: {confirm: '契約しますか?'}, class: 'agreement-btn'

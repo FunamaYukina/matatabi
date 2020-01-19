@@ -8,14 +8,19 @@ services:
     container_name: web
     ports:
       - "3000:3000"
+      - "3035:3035"
+
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     tty: true
     stdin_open: true
     environment:
       path: $HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
     volumes:
-      - .:/matatabi_app
+#      - .:/matatabi_app
       - gem_data:/usr/local/bundle
+      - .:/matatabi_app:cached
+#      - bundle:/usr/local/bundle
+
     depends_on:
       - db
   db:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_26_140039) do
+ActiveRecord::Schema.define(version: 2020_01_12_022617) do
 
   create_table "advisors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -40,6 +40,23 @@ ActiveRecord::Schema.define(version: 2019_12_26_140039) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "questioner_id", null: false
+    t.integer "answerer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "talks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "room_id", null: false
+    t.bigint "user_id", null: false
+    t.text "talk_content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_talks_on_room_id"
+    t.index ["user_id"], name: "index_talks_on_user_id"
+  end
+
   create_table "travelers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -64,5 +81,7 @@ ActiveRecord::Schema.define(version: 2019_12_26_140039) do
   add_foreign_key "advisors", "users"
   add_foreign_key "plans", "advisors"
   add_foreign_key "profiles", "users"
+  add_foreign_key "talks", "rooms"
+  add_foreign_key "talks", "users"
   add_foreign_key "travelers", "users"
 end

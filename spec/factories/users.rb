@@ -22,4 +22,10 @@ FactoryBot.define do
       user.advisor.plans.create(attributes_for(:plan))
     end
   end
+
+  trait :with_room do
+    after(:create) do |user|
+      user.question_rooms.create(answerer_id:User.first.id)
+    end
+  end
 end

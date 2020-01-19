@@ -1,0 +1,134 @@
+.room_body {
+  background-color: #F5FFFA;
+  text-align: center;
+  min-height: 800px;
+
+  .room_container {
+    width: 670px;
+    margin:0 auto 20px auto;
+    padding-top: 10px;
+
+    .room_header {
+      width: 670px;
+      height: 50px;
+      border: 1px solid #CCC;
+      background-color: #008080;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+
+      p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .room_center {
+      background-color: white;
+      text-align: left;
+
+      .room_box {
+        p{
+          border-bottom: 1px solid #CCC;
+          background-color: #DDDDDD;
+          padding: 10px 0 10px 30px;
+          margin-bottom: 0;
+        }
+        .member_box {
+          height: 60px;
+          border-bottom: 1px solid #CCC;
+
+          .member_image {
+            width: 80px;
+            display: inline-block;
+            padding-top: 5px;
+            padding-left: 20px;
+
+            .member_icon {
+              border-radius: 25px;
+              border: 2px solid #CCC;
+            }
+          }
+
+          .member_name {
+            //background-color: #339933;
+            width: 200px;
+            display: inline-block;
+            margin-left: 30px;
+            vertical-align: middle;
+            font-size: 18px;
+            color: black;
+          }
+
+          .member_message {
+            width: 300px;
+            text-align: right;
+            display: inline-block;
+            color: #999999;
+          }
+        }
+      }
+    }
+  }
+}
+
+// show
+.show_body{
+  background-color: #F5FFFA;
+  text-align: center;
+  min-height: 800px;
+  padding-top: 10px;
+
+  .show_container{
+    width: 670px;
+    margin:0 auto 20px auto;
+    border: 1px #CCC solid;
+    .show_header{
+      height: 60px;
+      background-color: #339933;
+      color: white;
+      text-align: left;
+      .header_left{
+        display: inline-block;
+        width: 220px;
+        padding-left: 20px;
+        a {
+          color: white;
+        }
+      }
+      .header_center {
+        display: inline-block;
+        width: 220px;
+        text-align: center;
+        padding-top: 10px;
+        font-size: 24px;
+      }
+    }
+    .show_center{
+      height: 500px;
+      background-color: white;
+      overflow: auto;
+      .show_my_talk{
+        background-color: #DADADA;
+        display: block;
+        text-align: right;
+      }
+    }
+    .show_bottom{
+      height: 100px;
+      background-color: #E6FFE9;
+      textarea{
+        margin-top: 5px;
+        //wrap:hard
+      }
+      button{
+        background-color: #228B22;
+        color: white;
+        padding: 5px 10px;
+        vertical-align: top;
+        margin-top: 25px;
+        margin-left: 10px;
+      }
+    }
+  }
+}

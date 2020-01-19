@@ -59,7 +59,7 @@
         font-size: 14px;
       }
 
-      .submit-btn{
+      .submit-btn {
         display: block;
         background-color: #228B22;
         width: 160px;
@@ -72,12 +72,39 @@
         margin-top: 10px;
       }
 
+      .consult-btn {
+        display: inline-block;
+        background-color: #228B22;
+        width: 240px;
+        height: 30px;
+        margin-top: 20px;
+        margin-right: 60px;
+        border-radius: 5px;
+        padding-top: 2px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .agreement-btn {
+        display: inline-block;
+        background-color: #B00100;
+        width: 140px;
+        height: 30px;
+        margin-top: 20px;
+        border-radius: 5px;
+        padding-top: 2px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+      }
+
       .edit {
         background-color: #CCCCCC;
         width: 160px;
         margin-left: auto;
 
-        .edit-btn{
+        .edit-btn {
           display: block;
           background-color: #228B22;
           width: 160px;
@@ -93,42 +120,50 @@
       }
     }
   }
-  .edit_plan,.new_plan{
+
+  .edit_plan, .new_plan {
     margin-top: 20px;
     padding-left: 20px;
     padding-right: 25px;
+
     span {
       border-bottom: solid 2px #339933;
       font-size: 20px;
     }
-    .plan_box{
-      p{
+
+    .plan_box {
+      p {
         margin-bottom: 5px;
       }
-      .title{
-        .text_field_area{
+
+      .title {
+        .text_field_area {
           border: 1px solid #CCC;
         }
       }
-      .description{
-        .text_area{
+
+      .description {
+        .text_area {
           width: 600px;
           height: 150px;
           border: 1px solid #CCC;
         }
       }
-      .fee{
-        .number_area{
+
+      .fee {
+        .number_area {
           border: 1px solid #CCC;
           width: 100px;
         }
-        span{
+
+        span {
           border-bottom: none;
           font-size: 16px;
           padding-right: 10px;
           padding-left: 10px;
         }
       }
+
       .submit-btn {
         display: block;
         background-color: #228B22;

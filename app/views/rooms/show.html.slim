@@ -1,0 +1,15 @@
+.show_body
+  .show_container
+    .show_header
+      .header_left
+        = link_to rooms_path do
+          i.fas.fa-angle-left
+          | トーク一覧
+      .header_center
+        = @member.name
+    #app
+
+= javascript_pack_tag 'components/talks'
+= content_tag :div, id: "componentsTalks",
+        data: {room_id: @room.id,current_user_id: current_user.id,
+                my_img: ActionController::Base.helpers.asset_path(current_user.profile.image_file),your_img: ActionController::Base.helpers.asset_path(@member.profile.image_file)}.to_json do

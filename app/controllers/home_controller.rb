@@ -7,5 +7,6 @@ class HomeController < ApplicationController
   end
 
   def index
+    @plans = Plan.where(advisor_id:2)
   end
 end

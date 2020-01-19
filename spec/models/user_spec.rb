@@ -76,10 +76,25 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "新規登録した場合" do
+  describe "after_create" do
     it "プロフィールも作られること" do
       create(:user)
       expect(Profile.last.user_id).to eq User.last.id
+    end
+  end
+
+  describe "find_questioner" do
+    it "回答中のRoomが取得できること" do
+      create(:user)
+      create(:traveler_user, :with_room)
+      expect(User.first.find_questioner).to eq Room.where(answerer_id: User.first.id)
+    end
+  end
+  describe "find_answerer" do
+    it "回答中のRoomが取得できること" do
+      create(:user)
+      create(:traveler_user, :with_room)
+      expect(User.last.find_answerer).to eq Room.where(questioner_id: User.last.id)
     end
   end
 end

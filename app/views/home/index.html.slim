@@ -21,8 +21,21 @@
           = link_to "四国", search_users_path(name: "四国 愛媛 高知 香川 徳島"), class: 'btn button'
           = link_to "九州", search_users_path(name: "九州 福岡 長崎 大分 宮崎 鹿児島 熊本"), class: 'btn button'
           = link_to "沖縄", search_users_path(name: "沖縄"), class: 'btn button'
-          button 四国
-          button 九州
-          button 沖縄
+
+          = link_to "チャット", rooms_path, class: 'btn button'
+
     .index-bottom
       p 人気アドバイザー
+      - @plans.each do |plan|
+        .plan_container
+          .user_box
+            = link_to user_profile_path(user_name: plan.advisor.user.name) do
+              .user_icon
+                = image_tag plan.advisor.user.profile.image_file.url, :size => '50x50', :class => 'plan_user_icon'
+              .user_name
+                = plan.advisor.user.name
+          .plan_box
+            .title
+              = "「" +plan.title + "」"
+            .description
+              = plan.description
