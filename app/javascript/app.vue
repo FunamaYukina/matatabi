@@ -2,23 +2,23 @@
     <div id="app">
         <div class="show_center">
             <div class="message" v-for="message in messages">
-                <div v-if="message.user_id == 3">
-                    <div class="message-left">
-                        <div class="user-image">
-                            <img :src="icon" width="30" class="image-left">
-                        </div>
-                        <div class="balloon-left">
-                            <p>{{message.talk_content}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div v-else>
+                <div v-if="message.user_id == current_user_id">
                     <div class="message-right">
                         <div class="balloon-right">
                             <p>{{message.talk_content}}</p>
                         </div>
                         <div class="user-image">
-                            <img :src="icon" width="30" class="image-right">
+                            <img :src="your_img" width="30" class="image-right">
+                        </div>
+                    </div>
+                </div>
+                <div v-else>
+                    <div class="message-left">
+                        <div class="user-image">
+                            <img :src="my_img" width="30" height="30" class="image-left">
+                        </div>
+                        <div class="balloon-left">
+                            <p>{{message.talk_content}}</p>
                         </div>
                     </div>
                 </div>
@@ -44,24 +44,38 @@
             return {
                 messages: [],
                 input_message: '',
-                icon: require("images/noimage.png")
+                icon: require("images/noimage.png"),
+                room_id: "",
+                current_user_id: "",
+                my_img: "",
+                your_img: ""
             }
         },
         created() {
-            this.fetch()
+            this.getContentTagData();
+            this.fetchTalks();
         },
         methods: {
-            async fetch() {
+            getContentTagData() {
+                const node = document.getElementById("componentsTalks");
+                const props = JSON.parse(node.getAttribute("data"));
+                console.log(props);
+                this.room_id = props.room_id;
+                this.current_user_id = props.current_user_id;
+                this.my_img = props.my_img.url;
+                this.your_img = props.your_img.url;
+            },
+            async fetchTalks() {
                 console.log("from created");
-                axios.get('/talks')
+                await axios.get(`${this.room_id}/talks`)
                     .then(response => {
                         this.messages = JSON.parse(response.data.talks);
                     })
             },
             addNewMessage: function () {
                 console.log('addNewMessage')
-                axios.post('/talks', {
-                    room_id: 2,
+                axios.post(`${this.room_id}/talks`, {
+                    room_id: this.room_id,
                     talk_content: this.input_message
                 })
                     .then(response => {

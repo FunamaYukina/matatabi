@@ -1,6 +1,3 @@
-javascript:
-    rails = window.rails = {};
-    rails.messages = #{raw @talks.to_json};
 .show_body
   .show_container
     .show_header
@@ -10,16 +7,9 @@ javascript:
           | トーク一覧
       .header_center
         = @member.name
-    / .show_center
-      / - @talks.each do |talk|
-        .show_my_talk
-          = talk.talk_content
     #app
 
-    / .show_bottom
-    /   = form_for @talk, html: {id: 'message-form'} do |f|
-    /     = f.text_area :talk_content, cols: 40, "v-model" => "message.content"
-    /     / = f.submit "送信","v-on:click"=>"addNewMessage"
-    /     button v-on:click="addNewMessage" 送信
-    /     span content:
 = javascript_pack_tag 'components/talks'
+= content_tag :div, id: "componentsTalks",
+        data: {room_id: @room.id,current_user_id: current_user.id,
+                my_img: current_user.profile.image_file,your_img: @member.profile.image_file}.to_json do

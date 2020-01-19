@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resource :profile, only: [:show, :edit, :update]
   end
 
-  resources :rooms
-  resources :talks
+  resources :rooms do
+    resources :talks
+  end
 end
