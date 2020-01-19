@@ -8,7 +8,7 @@ class Room < ApplicationRecord
     if my_id == Room.find(self.id).answerer_id
       User.find(other_id)
     else
-      User.find(my_id)
+      User.find( Room.find(self.id).answerer_id)
     end
   end
 end

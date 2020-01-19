@@ -8,7 +8,7 @@
                             <p>{{message.talk_content}}</p>
                         </div>
                         <div class="user-image">
-                            <img :src="your_img" width="30" class="image-right">
+                            <img :src="your_img" width="30" height="30" class="image-right">
                         </div>
                     </div>
                 </div>
@@ -62,8 +62,8 @@
                 console.log(props);
                 this.room_id = props.room_id;
                 this.current_user_id = props.current_user_id;
-                this.my_img = props.my_img.url;
-                this.your_img = props.your_img.url;
+                this.my_img = props.my_img;
+                this.your_img = props.your_img;
             },
             async fetchTalks() {
                 console.log("from created");
