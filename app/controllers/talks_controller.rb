@@ -12,10 +12,8 @@ class TalksController < ApplicationController
     @talk = current_user.talks.build(talk_params)
 
     if @talk.save
-      # flash[:success] = t("users.flash.create.success", item: "プラン")
       render json: { data: @talk}
     else
-      # flash[:danger] = t("users.flash.create.danger", item: "プラン")
       # render "rooms/show"
       render json: {status: 'FAILED', message: 'Loaded the post', data: "hello"}
     end
