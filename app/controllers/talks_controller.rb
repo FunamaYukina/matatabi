@@ -4,12 +4,11 @@ class TalksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @talks_data = Talk.where(room_id: 2).to_json
+    @talks_data = Talk.where(room_id: params[:room_id]).to_json
     render json: {talks: @talks_data}
   end
 
   def create
-    # binding.pry
     @talk = current_user.talks.build(talk_params)
 
     if @talk.save
@@ -19,7 +18,6 @@ class TalksController < ApplicationController
       # flash[:danger] = t("users.flash.create.danger", item: "プラン")
       # render "rooms/show"
       render json: {status: 'FAILED', message: 'Loaded the post', data: "hello"}
-      # binding.pry
     end
   end
 

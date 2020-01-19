@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users, param: :name do
     resources :plans, except: [:show, :index]
     get :search, on: :collection
+    get :contract
     resource :profile, only: [:show, :edit, :update]
   end
 

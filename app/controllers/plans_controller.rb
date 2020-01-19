@@ -15,7 +15,6 @@ class PlansController < ApplicationController
       flash[:danger] = t("users.flash.create.danger", item: "プラン")
       render "/users/:user_name/plans/new"
     end
-
     redirect_to user_profile_path(user_name: current_user.name)
   end
 

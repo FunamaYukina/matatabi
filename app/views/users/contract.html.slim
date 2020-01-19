@@ -1,0 +1,4 @@
+.contract_container
+  p 契約が完了しました！
+  p 早速チャットで会話していきましょう！！
+  = link_to "チャットに移動する", rooms_path(@room, params: {room: {answerer_id:@user.id, questioner_id:current_user.id}}), method: :post, class: 'consult-btn'

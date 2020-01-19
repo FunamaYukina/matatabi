@@ -16,8 +16,11 @@ services:
     environment:
       path: $HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
     volumes:
-      - .:/matatabi_app
+#      - .:/matatabi_app
       - gem_data:/usr/local/bundle
+      - .:/matatabi_app:cached
+#      - bundle:/usr/local/bundle
+
     depends_on:
       - db
   db:

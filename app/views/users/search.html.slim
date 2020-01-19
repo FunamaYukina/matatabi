@@ -11,10 +11,11 @@
         - @plans.each do |plan|
           .plan_container
             .user_box
-              .user_icon
-                = image_tag plan.advisor.user.profile.image_file.url, :size => '50x50', :class => 'plan_user_icon'
-              .user_name
-                = plan.advisor.user.name
+              =link_to user_profile_path(user_name: plan.advisor.user.name) do
+                .user_icon
+                  = image_tag plan.advisor.user.profile.image_file.url, :size => '50x50', :class => 'plan_user_icon'
+                .user_name
+                  = plan.advisor.user.name
             .plan_box
               .title
                 = "「" +plan.title + "」"

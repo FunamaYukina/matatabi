@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <div class="show_center">
+        <div class="show_center" id="message_area">
             <div class="message" v-for="message in messages">
                 <div v-if="message.user_id == current_user_id">
                     <div class="message-right">
@@ -55,31 +55,42 @@
             this.getContentTagData();
             this.fetchTalks();
         },
+        mounted() {
+            setInterval(() => {
+                if (document.visibilityState === 'visible') {
+                    this.fetchTalks();
+                }
+            }, 10000)
+        },
         methods: {
             getContentTagData() {
                 const node = document.getElementById("componentsTalks");
                 const props = JSON.parse(node.getAttribute("data"));
-                console.log(props);
                 this.room_id = props.room_id;
                 this.current_user_id = props.current_user_id;
                 this.my_img = props.my_img;
                 this.your_img = props.your_img;
             },
             async fetchTalks() {
-                console.log("from created");
                 await axios.get(`${this.room_id}/talks`)
                     .then(response => {
                         this.messages = JSON.parse(response.data.talks);
+                        console.log("メッセージ代入した");
+                        console.log(JSON.parse(response.data.talks))
                     })
+                this.ScrollToBottom()
+            },
+            ScrollToBottom(){
+                let obj = document.getElementById('message_area');
+                obj.scrollTop = obj.scrollHeight;
             },
             addNewMessage: function () {
-                console.log('addNewMessage')
+                if (this.input_message == "") return {}
                 axios.post(`${this.room_id}/talks`, {
                     room_id: this.room_id,
                     talk_content: this.input_message
                 })
                     .then(response => {
-                        console.log(response.data.data);
                         this.messages.push(response.data.data);
                         this.input_message = "";
                     }).catch(error => {

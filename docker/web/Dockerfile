@@ -1,10 +1,7 @@
 FROM ruby:2.6.5
 ENV LANG C.UTF-8
 
-RUN apt-get update -qq
-RUN apt-get install -y build-essential
-RUN apt-get install -y libpq-dev
-RUN apt-get install -y nodejs
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
 # yarnパッケージ管理ツールインストール
 RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
@@ -15,9 +12,16 @@ RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
 RUN mkdir /matatabi_app
 WORKDIR /matatabi_app
 
-ADD Gemfile /matatabi_app/Gemfile
-ADD Gemfile.lock /matatabi_app/Gemfile.lock
+ADD Gemfile .
+ADD Gemfile.lock .
 ENV PATH $HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
 RUN yarn add jquery popper.js bootstrap
-RUN gem install bundler
-RUN bundle install
+#RUN gem install bundler
+RUN gem update --system && \
+    gem uninstall bundler && \
+    rm /usr/local/bin/bundle && \
+    rm /usr/local/bin/bundler && \
+    gem install bundler
+#RUN bundle update --bundler
+RUN bundle
+ADD . /matatabi_app

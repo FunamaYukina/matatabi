@@ -32,7 +32,6 @@ RSpec.describe Plan, type: :model do
 
     context "検索した言葉がプランテーブルにある場合" do
       it "該当するプランを返すこと" do
-        # binding.pry
         expect(Plan.search("test")).to include user.advisor.plans.first
       end
     end

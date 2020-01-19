@@ -7,4 +7,8 @@ class UsersController < ApplicationController
     @plans = Plan.search(params[:name])
     @name = params[:name]
   end
+
+  def contract
+    @user = User.find_by(name: params[:user_name])
+  end
 end
