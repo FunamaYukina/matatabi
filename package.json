@@ -10,6 +10,7 @@
     "bootstrap": "^4.4.1",
     "bootstrap-sass": "^3.4.1",
     "channels": "^0.0.4",
+    "file-loader": "^5.0.2",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
     "rails-ujs": "^5.2.4-1",
@@ -17,7 +18,8 @@
     "vue": "^2.6.11",
     "vue-loader": "^15.8.3",
     "vue-template-compiler": "^2.6.11",
-    "vue-turbolinks": "^2.0.4"
+    "vue-turbolinks": "^2.0.4",
+    "webpack": "^4.41.5"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.1"

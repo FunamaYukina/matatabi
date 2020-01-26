@@ -1,7 +1,7 @@
 // top
 
 .top {
-  background-image: url("../images/top.jpg");
+  background: url("../images/top.jpg");
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -57,7 +57,7 @@
       .search_btn {
         background-color: #008800;
         color: white;
-        padding:2px 15px;
+        padding: 2px 15px;
         vertical-align: initial;
       }
     }
@@ -69,7 +69,7 @@
         text-align: center;
 
         .region-top, .region-center, .region-bottom {
-          .button,button {
+          .button, button {
             background: #008800;
             color: white;
             font-size: 19px;
@@ -89,6 +89,7 @@
     .index-bottom {
       padding-top: 30px;
       margin-bottom: 150px;
+
       .plan_container {
         width: 500px;
         background-color: #F5FFFA;
