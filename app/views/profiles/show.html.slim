@@ -1,7 +1,7 @@
 .user_container
   .container_top
     .top_left
-      = image_tag current_user.profile.image_file.url,  :size => '120x120', :class => 'top_icon'
+      = image_tag @user.profile.image_file.url,  :size => '120x120', :class => 'top_icon'
     .top_center
       = @user.name
     .top_right
@@ -29,7 +29,7 @@
     - else
       = render partial: 'shared/plans/user_plans'
 .review_container
-  p レビュー6件
+  p レビュー2件
   .review_post
     .post_left
       = image_tag 'noimage.png', :size => '50x50', :class => 'review_icon'
@@ -37,7 +37,7 @@
       .right_name
         p ゆきな
       .right_detail
-        p 大変勉強になりました。大変勉強になりました。大変勉強になりました。大変勉強になりました。
+        p 素敵なプランが決まりました。ありがとうございました！
   .review_post
     .post_left
       = image_tag 'noimage.png', :size => '50x50', :class => 'review_icon'
@@ -45,4 +45,4 @@
       .right_name
         p ゆきな
       .right_detail
-        p 大変勉強になりました。大変勉強になりました。大変勉強になりました。大変勉強になりました。
+        p とても丁寧にサポートしていただきました！また旅行するときも相談させてください！

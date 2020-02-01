@@ -16,7 +16,7 @@ default: &default
   username: root
   password: password
 #  socket: /tmp/mysql.sock
-  host: db
+ # host: db
 
 development:
   <<: *default
@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: matatabi_app_production
-  username: matatabi_app
+  database: <%= ENV['MATATABI_APP_DATABASE']%>
+  username: <%= ENV['MATATABI_APP_DATABASE_USERNAME'] %>
   password: <%= ENV['MATATABI_APP_DATABASE_PASSWORD'] %>
