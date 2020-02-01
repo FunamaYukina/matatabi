@@ -41,6 +41,7 @@ gem "devise-i18n-views"
 gem "jquery-rails", "~> 4.3", ">= 4.3.1"
 gem "mini_magick"
 gem "slim-rails"
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

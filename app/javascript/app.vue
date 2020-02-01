@@ -8,14 +8,14 @@
                             <p>{{message.talk_content}}</p>
                         </div>
                         <div class="user-image">
-                            <img :src="your_img" width="30" height="30" class="image-right">
+                            <img :src="my_img" width="30" height="30" class="image-right">
                         </div>
                     </div>
                 </div>
                 <div v-else>
                     <div class="message-left">
                         <div class="user-image">
-                            <img :src="my_img" width="30" height="30" class="image-left">
+                            <img :src="your_img" width="30" height="30" class="image-left">
                         </div>
                         <div class="balloon-left">
                             <p>{{message.talk_content}}</p>

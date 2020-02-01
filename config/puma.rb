@@ -9,12 +9,17 @@ threads threads_count, threads_count
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
-port        ENV.fetch("PORT") { 3000 }
+#port        ENV.fetch("PORT") { 3000 }
+
+bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
 
 # Specifies the `environment` that Puma will run in.
 #
-environment ENV.fetch("RAILS_ENV") { "development" }
+rails_env = environment ENV.fetch("RAILS_ENV") { "development" }
 
+if rails_env == "development"
+  port ENV.fetch("PORT") { 3000 }
+end
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
 # the concurrency of the application would be max `threads` * `workers`.
@@ -22,7 +27,17 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # processes).
 #
 # workers ENV.fetch("WEB_CONCURRENCY") { 2 }
-
+if rails_env == "production"
+  rails_root = Dir.pwd
+  pidfile File.join(rails_root, "tmp", "pids", "puma.pid")
+  state_path File.join(rails_root, "tmp", "pids", "puma.state")
+  stdout_redirect(
+    File.join(rails_root, "log", "puma.log"),
+    File.join(rails_root, "log", "puma-error.log"),
+    true,
+  )
+  daemonize true
+end
 # Use the `preload_app!` method when specifying a `workers` number.
 # This directive tells Puma to first boot the application and load code
 # before forking the application. This takes advantage of Copy On Write
